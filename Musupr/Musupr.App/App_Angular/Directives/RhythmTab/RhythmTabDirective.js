@@ -1,4 +1,4 @@
-﻿var MusuprApp;
+var MusuprApp;
 (function (MusuprApp) {
     angular.module('MusuprApp').directive('rhythmTab', function () {
         return {
@@ -12,7 +12,6 @@
             templateUrl: 'App_Angular/Directives/RhythmTab/RhythmTabTemplate.html',
             link: function (scope, element) {
                 scope.activeTabIndex = 0;
-
                 scope.setTabActive = function (index) {
                     scope.activeTabIndex = index;
                 };

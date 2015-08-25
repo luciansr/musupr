@@ -1,4 +1,4 @@
-﻿var MusuprApp;
+var MusuprApp;
 (function (MusuprApp) {
     var RhythmService = (function () {
         function RhythmService() {
@@ -12,6 +12,5 @@
     })();
     MusuprApp.RhythmService = RhythmService;
 })(MusuprApp || (MusuprApp = {}));
-
 angular.module('MusuprApp').service('RhythmService', MusuprApp.RhythmService);
 //# sourceMappingURL=RhythmService.js.map
