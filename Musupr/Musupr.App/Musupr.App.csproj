@@ -124,34 +124,45 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Angular\Components\PedirTrocarSenha\PedirTrocarSenha.html" />
-    <Content Include="App_Angular\Components\TrocarSenha\TrocarSenha.html" />
-    <Content Include="App_Angular\Components\Regras\Regras.html" />
-    <Content Include="App_Angular\Components\Sobre\Sobre.html" />
     <Content Include="App_Angular\Components\Home\Home.html" />
-    <Content Include="App_Angular\Components\Home\Tabs\tab3.html" />
-    <Content Include="App_Angular\Components\Home\Tabs\tab2.html" />
+    <Content Include="App_Angular\Components\Home\HomeController.js" />
+    <Content Include="App_Angular\Components\Home\HomeController.js.map" />
     <Content Include="App_Angular\Components\Home\Tabs\tab1.html" />
+    <Content Include="App_Angular\Components\Home\Tabs\tab2.html" />
+    <Content Include="App_Angular\Components\Home\Tabs\tab3.html" />
+    <Content Include="App_Angular\Components\Login\AccountController.js" />
+    <Content Include="App_Angular\Components\Login\AccountController.js.map" />
     <Content Include="App_Angular\Components\Login\Login.html" />
     <Content Include="App_Angular\Components\Login\Tabs\LoginTab.html" />
     <Content Include="App_Angular\Components\Login\Tabs\RegisterTab.html" />
+    <Content Include="App_Angular\Components\Menu\MenuController.js" />
     <Content Include="App_Angular\Components\MeusAnuncios\MeusAnuncios.html" />
     <Content Include="App_Angular\Components\NovaVaga\NovaVaga.html" />
+    <Content Include="App_Angular\Components\PedirTrocarSenha\PedirTrocarSenha.html" />
+    <Content Include="App_Angular\Components\Regras\Regras.html" />
     <Content Include="App_Angular\Components\Shared\404\404.html" />
+    <Content Include="App_Angular\Components\Sobre\Sobre.html" />
+    <Content Include="App_Angular\Components\TrocarSenha\TrocarSenha.html" />
     <Content Include="App_Angular\Components\Usuario\Usuario.html" />
     <Content Include="App_Angular\Components\Vagas\Vagas.html" />
+    <Content Include="App_Angular\Components\Vagas\VagasController.js" />
     <Content Include="App_Angular\Components\Vaga\Vaga.html" />
-    <TypeScriptCompile Include="App_Angular\Components\PedirTrocarSenha\PedirTrocarSenhaController.ts" />
-    <TypeScriptCompile Include="App_Angular\Directives\AsyncValidators\EmailUniqueDirective.ts" />
-    <TypeScriptCompile Include="App_Angular\Directives\AsyncValidators\UsernameUniqueDirective.ts" />
-    <TypeScriptCompile Include="App_Angular\Directives\PasswordVerify\PasswordVerifyDirective.ts" />
+    <Content Include="App_Angular\Directives\RhythmPagination\RhythmPaginationTemplate.html" />
     <Content Include="App_Angular\Directives\RhythmPostItem\RhythmPostItemTemplate.html" />
     <Content Include="App_Angular\Directives\RhythmSidebar\RhythmSidebarTemplate.html" />
-    <Content Include="App_Angular\Directives\RhythmPagination\RhythmPaginationTemplate.html" />
+    <Content Include="App_Angular\Directives\RhythmTab\RhythmTabAnimation.css" />
     <Content Include="App_Angular\Directives\RhythmTab\RhythmTabAnimation.min.css">
       <DependentUpon>RhythmTabAnimation.css</DependentUpon>
     </Content>
+    <Content Include="App_Angular\Directives\RhythmTab\RhythmTabDirective.js" />
+    <Content Include="App_Angular\Directives\RhythmTab\RhythmTabsDirective.js" />
     <Content Include="App_Angular\Directives\RhythmTab\RhythmTabTemplate.html" />
+    <Content Include="App_Angular\MusuprAppModule.js" />
+    <Content Include="App_Angular\Services\Authentication\AccountService.js" />
+    <Content Include="App_Angular\Services\Authentication\HttpInterceptorService.js" />
+    <Content Include="App_Angular\Services\LogService.js" />
+    <Content Include="App_Angular\Services\RhythmService.js" />
+    <Content Include="App_Angular\Services\VagasService.js" />
     <Content Include="Content\Images\70x70.jpg" />
     <Content Include="Content\Images\favicon114x114.png" />
     <Content Include="Content\Images\favicon32x32.png" />
@@ -169,7 +180,6 @@
     <Content Include="Content\Images\texture\2104.jpg" />
     <Content Include="Content\libs\angular-social-share\angular-social-share.min.css" />
     <Content Include="Content\libs\Musupr.css" />
-    <Content Include="App_Angular\Directives\RhythmTab\RhythmTabAnimation.css" />
     <Content Include="Content\libs\MusuprAnimation.css" />
     <Content Include="Content\libs\rhythm\css\AjaxLoader.gif" />
     <Content Include="Content\libs\rhythm\css\animate.min.css" />
@@ -471,6 +481,16 @@
     <Content Include="Scripts\libs\rs-plugin\js\jquery.themepunch.revolution.min.js.map">
       <DependentUpon>jquery.themepunch.revolution.min.js</DependentUpon>
     </Content>
+    <Content Include="App_Angular\Components\Menu\MenuController.js.map" />
+    <Content Include="App_Angular\Components\Vagas\VagasController.js.map" />
+    <Content Include="App_Angular\Directives\RhythmTab\RhythmTabDirective.js.map" />
+    <Content Include="App_Angular\Directives\RhythmTab\RhythmTabsDirective.js.map" />
+    <Content Include="App_Angular\MusuprAppModule.js.map" />
+    <Content Include="App_Angular\Services\Authentication\AccountService.js.map" />
+    <Content Include="App_Angular\Services\Authentication\HttpInterceptorService.js.map" />
+    <Content Include="App_Angular\Services\LogService.js.map" />
+    <Content Include="App_Angular\Services\RhythmService.js.map" />
+    <Content Include="App_Angular\Services\VagasService.js.map" />
     <None Include="Properties\PublishProfiles\SmarterASP.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -483,31 +503,35 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="App_Angular\Components\MeusAnuncios\MeusAnunciosController.ts" />
-    <TypeScriptCompile Include="App_Angular\Components\NovaVaga\NovaVagaController.ts" />
-    <TypeScriptCompile Include="App_Angular\Components\TrocarSenha\TrocarSenhaController.ts" />
-    <TypeScriptCompile Include="App_Angular\Components\Usuario\UsuarioController.ts" />
-    <TypeScriptCompile Include="App_Angular\Components\Vaga\VagaController.ts" />
-    <TypeScriptCompile Include="App_Angular\Directives\DisqusDirective\DisqusDirective.ts" />
-    <TypeScriptCompile Include="App_Angular\Directives\GoogleAdSense\GoogleAdSenseDirective.ts" />
-    <TypeScriptCompile Include="App_Angular\Directives\RhythmHeader\RhythmHeaderDirective.ts" />
-    <TypeScriptCompile Include="App_Angular\Directives\RhythmPostItem\RhythmPostItemDirective.ts" />
-    <TypeScriptCompile Include="App_Angular\Directives\RhythmSidebar\RhythmSidebarDirective.ts" />
-    <TypeScriptCompile Include="App_Angular\Directives\RhythmPagination\RhythmPaginationDirective.ts" />
-    <TypeScriptCompile Include="App_Angular\Directives\RhythmTab\RhythmTabDirective.ts" />
-    <TypeScriptCompile Include="App_Angular\Services\Authentication\SecurityService.ts" />
-    <TypeScriptCompile Include="App_Angular\Services\AdminService.ts" />
-    <TypeScriptCompile Include="App_Angular\Services\UsuarioService.ts" />
-    <TypeScriptCompile Include="App_Angular\Services\VagasService.ts" />
-    <TypeScriptCompile Include="App_Angular\Services\Authentication\AccountService.ts" />
-    <TypeScriptCompile Include="App_Angular\Services\Authentication\HttpInterceptorService.ts" />
-    <TypeScriptCompile Include="App_Angular\Services\RhythmService.ts" />
-    <TypeScriptCompile Include="App_Angular\Components\Menu\MenuController.ts" />
-    <TypeScriptCompile Include="App_Angular\MusuprAppModule.ts" />
-    <TypeScriptCompile Include="App_Angular\Services\LogService.ts" />
     <TypeScriptCompile Include="App_Angular\Components\Home\HomeController.ts" />
     <TypeScriptCompile Include="App_Angular\Components\Login\AccountController.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\Menu\MenuController.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\MeusAnuncios\MeusAnunciosController.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\NovaVaga\NovaVagaController.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\PedirTrocarSenha\PedirTrocarSenhaController.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\TrocarSenha\TrocarSenhaController.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\Usuario\UsuarioController.ts" />
     <TypeScriptCompile Include="App_Angular\Components\Vagas\VagasController.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\Vaga\VagaController.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\AsyncValidators\EmailUniqueDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\AsyncValidators\UsernameUniqueDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\DisqusDirective\DisqusDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\GoogleAdSense\GoogleAdSenseDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\PasswordVerify\PasswordVerifyDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\RhythmHeader\RhythmHeaderDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\RhythmPagination\RhythmPaginationDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\RhythmPostItem\RhythmPostItemDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\RhythmSidebar\RhythmSidebarDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\RhythmTab\RhythmTabDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\MusuprAppModule.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\AdminService.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\Authentication\AccountService.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\Authentication\HttpInterceptorService.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\Authentication\SecurityService.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\LogService.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\RhythmService.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\UsuarioService.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\VagasService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
