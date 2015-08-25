@@ -1,0 +1,76 @@
+﻿<!-- Section -->
+<!--ng-style="{'background-image':'url(../../../Content/Images/texture/2104-3.jpg)'}"-->
+<section class="page-section bg-dark" >
+    <div class="relative container align-left">
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Trocar senha</h1>
+                <div class="hs-line-4 font-alt">
+                    Preencha os dados abaixo
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-30">
+                <div class="mod-breadcrumbs font-alt align-right">
+                    <a href="#!/">Início</a>&nbsp;/&nbsp;Trocar senha
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- End Section -->
+
+<section class="page-section pt-60">
+    <div class="container relative">
+        <h3 class="section-title font-alt mb-40 mb-sm-40">
+            Troca de senha
+        </h3>
+        <!-- Change password Form -->
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+
+                <form class="form contact-form" name="formTrocarSenha" novalidate ng-submit="trocarSenhaCtrl.trocarSenha()">
+                    <div class="clearfix">
+                        <!-- Username -->
+                        <div class="form-group">
+                            <input type="text" name="userID" class="input-md round form-control" placeholder="ID DE USUÁRIO" ng-model="trocarSenhaCtrl.userID" ng-minlength="6" required>
+                        </div>
+                        <div ng-messages="formTrocarSenha.userID.$error" ng-if="formTrocarSenha.userID.$touched">
+                            <div ng-message="minlength"><h6 class="font-alt">Tamanho mínimo de 6 caracteres</h6></div>
+                        </div>
+                        <!-- Password -->
+                        <div class="form-group">
+                            <input type="password" name="password" class="input-md round form-control" placeholder="Nova Senha" ng-model="trocarSenhaCtrl.password" ng-minlength="6" required>
+                        </div>
+                        <div ng-messages="formTrocarSenha.password.$error" ng-if="formTrocarSenha.password.$touched">
+                            <div ng-message="minlength"><h6 class="font-alt">Tamanho mínimo de 6 caracteres</h6></div>
+                        </div>
+
+                        <!-- Re-enter Password -->
+                        <div class="form-group">
+                            <input type="password" class="input-md round form-control" name="password2" placeholder="Repetir senha" ng-model="trocarSenhaCtrl.password2" password-verify="trocarSenhaCtrl.password" required>
+                        </div>
+                        <div ng-messages="formTrocarSenha.password2.$error" ng-if="formTrocarSenha.password2.$dirty">
+                            <div ng-message="passwordVerify"><h6 class="font-alt">Senhas devem ser iguais</h6></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="pull-right" on-create="trocarSenhaCtrl.salvaWidgetId(widgetId)"  vc-recaptcha theme="light" key="'6LfunAITAAAAAPRdM2NhuUB4KqCCnHbCaW-qbPFV'"></div>
+                        </div>
+                    </div>
+
+                    <!-- Send Button -->
+                    <div class="pt-10">
+                        <button class="submit_btn btn btn-mod btn-medium btn-round btn-full" id="reg-btn" ng-click="formTrocarSenha.submit()" ng-disabled="formTrocarSenha.$invalid">Trocar senha</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+        <!-- End change password Form -->
+    </div>
+</section>

@@ -1,0 +1,186 @@
+﻿<!-- Section -->
+<section class="page-section bg-dark-alfa-30" ng-style="{'background-image':novaVagaCtrl.vaga.HeaderImageUrl ? 'url(' + novaVagaCtrl.vaga.HeaderImageUrl + ')': 'url(../../../Content/Images/slider-bg1.jpg)'}">
+    <div class="relative container align-left">
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <h1 class="hs-line-11 font-alt mb-20 mb-xs-0" ng-bind="novaVagaCtrl.vaga.Titulo ? novaVagaCtrl.vaga.Titulo  : novaVagaCtrl.TituloPlaceholder">Nova Vaga</h1>
+                <div class="hs-line-4 font-alt" ng-bind="novaVagaCtrl.vaga.Descricao ? novaVagaCtrl.vaga.Descricao  : 'Anuncie sua vaga no MUSUPR'">
+
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-30">
+                <div class="mod-breadcrumbs font-alt align-right">
+                    <a href="#!/">Início</a>&nbsp;/&nbsp;<a href="javascript:void(0)" ng-bind="novaVagaCtrl.vaga.Titulo ? novaVagaCtrl.vaga.Titulo  : novaVagaCtrl.TituloPlaceholder"></a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- End Section -->
+<!-- Section -->
+
+<section class="page-section pt-60 pb-60">
+    <div class="container relative">
+
+        <h3 class="section-title font-alt mb-70 mb-sm-40">
+            Dados sobre a vaga
+        </h3>
+
+        <!-- Row -->
+        <div class="row">
+
+            <!-- Col -->
+
+            <div class="col-sm-12 mb-40">
+
+                <div class="page-relative-loader" ng-if="novaVagaCtrl.loading">
+                    <div class="loader">Carregando...</div>
+                </div>
+
+                <!-- Form -->
+                <form name="formNovaVaga" id="form" role="form" class="form" novalidate ng-if="!novaVagaCtrl.loading">
+
+                    <div class="col-sm-6 mb-20 mb-md-10">
+                        <input type="text" class="input-md form-control" placeholder="Título" maxlength="29" ng-model="novaVagaCtrl.vaga.Titulo" required>
+                    </div>
+
+                    <div class="col-sm-6 mb-20 mb-md-10">
+                        <input type="text" class="input-md form-control" style="text-transform:none !important" placeholder="PEQUENA DESCRIÇÃO" maxlength="79" ng-model="novaVagaCtrl.vaga.Descricao" required>
+                    </div>
+
+                    <div class="col-sm-12 mb-20 mb-md-10">
+                        <textarea name="text" id="text" style="text-transform:none !important" class="input-md form-control" rows="8" maxlength="3999" placeholder="USE MARKDOWN NA SUA DESCRIÇÃO: ##TESTE" maxlength="4196" ng-model="novaVagaCtrl.vaga.DescricaoMarkdown" required></textarea>
+                    </div>
+                    <div class="col-sm-6 col-md-4 mb-20 mb-md-10">
+                        <input type="url" class="input-md form-control" placeholder="URL para imagem (1920 x 600) de header" ng-model="novaVagaCtrl.vaga.HeaderImageUrl">
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 mb-20 mb-md-10">
+                        <input type="url" class="input-md form-control" placeholder="URL para imagem (360 x 195) de item" ng-model="novaVagaCtrl.vaga.PostItemImageUrl">
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 mb-20 mb-md-10">
+                        <input type="url" class="input-md form-control" placeholder="URL para imagem (70 x 70) de thumbnail" ng-model="novaVagaCtrl.vaga.ThumbnailUrl">
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 mb-20 mb-md-10">
+                        <select class="input-md form-control" ng-options="item.valor as item.texto for item in novaVagaCtrl.selectValues" ng-model="novaVagaCtrl.vaga.TempoExpiracao" required></select>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 mb-20 mb-md-10">
+                        <select class="input-md form-control" ng-options="item.ID as item.Nome for item in novaVagaCtrl.tiposDeVaga" ng-model="novaVagaCtrl.vaga.TipoVagaID" required></select>
+                    </div>
+
+                    <div class="row"></div>
+                    <div class="col-sm-4 mb-20 mb-md-10 pull-right">
+                        <div class="pull-right" on-create="novaVagaCtrl.salvaWidgetId(widgetId)" vc-recaptcha theme="light" key="'6LfunAITAAAAAPRdM2NhuUB4KqCCnHbCaW-qbPFV'"></div>
+                    </div>
+
+                    <div class="row"></div>
+                    <div class="col-sm-4 mb-20 mb-md-10 pull-right">
+                        <a href="javascript:void(0)" class="btn btn-mod btn-medium btn-round pull-right" ng-click="novaVagaCtrl.SalvarAnuncio()" ng-disabled="formNovaVaga.$invalid">Salvar anúncio</a>
+                    </div>
+                </form>
+                <!-- End Form -->
+            </div>
+
+
+
+            <!-- End Col -->
+
+
+        </div>
+        <!-- End Row -->
+
+    </div>
+
+</section>
+<hr class="mt-0 mb-0">
+<section class="page-section pt-40 pb-120 pb-xs-60 bg-gray-lighter" ng-if="!novaVagaCtrl.loading">
+    <div class="container relative">
+        <div class="row">
+            <h3 class="section-title font-alt mb-40 mb-sm-40 mt-30">
+                Pré-visualização de item e thumbnail
+            </h3>
+            <div class=" mt-90">
+                <div class="col-sm-6 mb-xs-60">
+
+                    <rhythm-post-item vaga="novaVagaCtrl.vaga" class="col-md-12 "></rhythm-post-item>
+                </div>
+                <div class="col-md-offset-1 col-sm-3">
+
+                    <div class="widget">
+
+                        <h5 class="widget-title font-alt">Thumbnail</h5>
+
+                        <div class="widget-body">
+                            <ul class="clearlist widget-posts">
+                                <li class="clearfix">
+                                    <a href="">
+                                        <div ng-style="{'background-image':novaVagaCtrl.vaga.ThumbnailUrl ? 'url(' + novaVagaCtrl.vaga.ThumbnailUrl + ')': 'url(/Content/Images/70x70.jpg)'}"
+                                             style="height:70px; width:70px;" alt=""
+                                             class="widget-posts-img center-cover-image-div">
+                                        </div>
+                                    </a>
+                                    <div class="widget-posts-descr">
+                                        <a href="#" title="" ng-bind="novaVagaCtrl.vaga.Titulo? novaVagaCtrl.vaga.Titulo: 'Título da Vaga'"></a>
+                                        <span ng-bind="novaVagaCtrl.vaga.CriadorNome + ' em ' + (novaVagaCtrl.vaga.DataCriacao | date:'d MMM')"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="mt-0 mb-0" ng-if="!novaVagaCtrl.loading">
+
+<section class="page-section pt-60 pb-60" ng-if="!novaVagaCtrl.loading">
+    <div class="container relative">
+        <div class="row">
+            <h3 class="section-title font-alt mb-40 mb-sm-40 mt-30">
+                Pré-visualização de Anúncio
+            </h3>
+            <!-- Content -->
+            <div class="col-sm-8">
+                <!-- Post -->
+                <div class="blog-item mb-80 mb-xs-40 animate-ultimas-vagas">
+
+                    <!-- Text -->
+                    <div class="blog-item-body">
+
+                        <h1 class="mt-0 font-alt" ng-bind="novaVagaCtrl.vaga.Titulo ? novaVagaCtrl.vaga.Titulo  : 'Título da vaga'"></h1>
+
+                        <span class="lead" ng-bind="novaVagaCtrl.vaga.Descricao? novaVagaCtrl.vaga.Descricao: 'Pequena descrição da vaga aqui.'"></span>
+                        <!-- End Text -->
+
+                        <div btf-markdown="novaVagaCtrl.vaga.DescricaoMarkdown" class="mt-20"></div>
+
+                    </div>
+                    <!-- End Text -->
+
+                </div>
+
+            </div>
+            <!-- End Content -->
+            <!-- Sidebar -->
+            <div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
+                <rhythm-sidebar></rhythm-sidebar>
+            </div>
+
+            <!-- End Sidebar -->
+        </div>
+
+    </div>
+</section>
+<!-- End Section -->
+<hr class="mt-0 mb-0" ng-if="!novaVagaCtrl.loading">

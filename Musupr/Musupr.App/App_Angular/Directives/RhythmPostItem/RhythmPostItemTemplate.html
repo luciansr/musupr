@@ -1,0 +1,26 @@
+﻿<div>
+    <div class="post-prev-img">
+        <a ng-href="{{'#!/Vaga/' + vaga.ID}}">
+            <div ng-style="{'background-image':vaga.PostItemImageUrl ? 'url(' + vaga.PostItemImageUrl + ')': 'url(/Content/Images/370x200.jpg)'}"
+                 style="height:195px; width:360px;" alt=""
+                 class="center-cover-image-div">
+            </div>
+        </a>
+    </div>
+
+    <div class="post-prev-title font-alt">
+        <a ng-href="{{'#!/Vaga/' + vaga.ID}}">{{vaga.Titulo}}</a>
+    </div>
+
+    <div class="post-prev-info font-alt">
+        <a href="" ng-bind="vaga.CriadorNome"></a> <span ng-bind="' - ' + (vaga.DataCriacao | date:'dd/MM/yyyy') + ' até ' + (vaga.DataExpiracao | date:'dd/MM/yyyy')"></span>
+    </div>
+
+    <div class="post-prev-text">
+        {{vaga.Descricao}}
+    </div>
+
+    <div class="post-prev-more">
+        <a ng-href="{{'#!/Vaga/' + vaga.ID}}" class="btn btn-mod btn-gray btn-round">Ver detalhes <i class="fa fa-angle-right"></i></a>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+﻿input.ng-dirty.ng-invalid {
+    border-color: #f59393;
+}
+
+.cursor-pointer {
+    cursor:pointer;
+}
+
+.icon-avaliacao {
+    font-size: 24px;
+}
+
+.font-weigth-700 {
+    font-weight: 700;
+}
+
+.musupr-logo {
+    position:relative;
+    top:-2px;
+}
+
+.color-white {
+    color: white;
+}
+
+.color-red {
+    color: red;
+}
+
+.color-green {
+    color: green;
+}
+
+.vagaAdSense {
+}
+
+.bg-row-admin {
+    background-color: lightgoldenrodyellow !important;
+}
+
+.center-cover-image-div {
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: 50% 50%;
+}
+
+
+
+.facebookShareMusupr {
+    position: relative;
+    top: 12px;
+}
+
+.imagemUsuarioView {
+    margin-top: 0 !important;
+    height:120px;
+    width:120px;
+}
+
+.musupr-bg-white {
+    background-color:white;
+}
+
+table ul.pagination {
+    list-style:none !important;
+}
+
+table ul.pagination > li {
+    display:inline !important;
+}
+
+table .pagination-white ul.pagination > li > a {
+    background-color:white;
+}
+
+
+@media (max-width:992px) {
+    .icon-avaliacao {
+        padding-right: 26px;
+        padding-left: 26px;
+    }
+}
+
+@media (max-width:768px) {
+    .imagemUsuarioView {
+        margin-top: 0 !important;
+    }
+
+    .icon-avaliacao {
+        padding-right: 45px;
+        padding-left: 45px;
+    }
+
+    .hidden-xs {
+        display: none;
+    }
+}

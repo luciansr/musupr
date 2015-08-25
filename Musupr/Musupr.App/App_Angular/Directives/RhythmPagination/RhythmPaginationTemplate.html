@@ -1,0 +1,13 @@
+﻿<div class="pagination" ng-cloak>
+    <a href="" ng-click="::selectPage(selectedPage - 1)"><i class="fa fa-angle-left"></i></a>
+    <!--<a class="no-active" ng-show="selectedPage > rangeToShow" ng-click="selectPage(1)">1</a>
+    <a class="no-active" ng-show="selectedPage > rangeToShow">...</a>-->
+    <a href="" ng-repeat="page in pages"
+       ng-click="::selectPage($index + 1)"
+       ng-class="{'active': $index + 1 == selectedPage}"
+       ng-bind="::$index + 1"
+       <!--ng-show="showFunction($index + 1)"-->></a>
+    <!--<a class="no-active" ng-if="selectedPage < (maximumPages - rangeToShow)">...</a>
+    <a href="" ng-show="selectedPage < (maximumPages - rangeToShow)" ng-bind="maximumPages" ng-click="selectPage(maximumPages)"></a>-->
+    <a href="" ng-click="::selectPage(selectedPage + 1)"><i class="fa fa-angle-right"></i></a>
+</div>

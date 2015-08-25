@@ -1,0 +1,56 @@
+﻿ <!-- Login Form -->
+<div class="row" ng-controller="AccountController as accountCtrl">
+    <div class="col-md-4 col-md-offset-4">
+
+        <form class="form contact-form" name="formLogin" ng-submit="accountCtrl.login(formLogin.$valid)" novalidate>
+            <div class="clearfix">
+
+                <!-- Username -->
+                <div class="form-group">
+                    <input type="text" name="userID" class="input-md round form-control" placeholder="ID DE USUÁRIO" ng-minlength="6" required ng-model="accountCtrl.userID">
+                </div>
+                <div ng-messages="formLogin.userID.$error" ng-if="formLogin.userID.$touched">
+                    <div ng-message="minlength"><h6 class="font-alt">Tamanho mínimo de 6 caracteres</h6></div>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <input type="password" name="password" id="password" class="input-md round form-control" placeholder="Senha" ng-minlength="6" required ng-model="accountCtrl.password">
+                </div>
+                <div ng-messages="formLogin.password.$error" ng-if="formLogin.password.$touched">
+                    <div ng-message="minlength"><h6 class="font-alt">Tamanho mínimo de 6 caracteres</h6></div>
+                </div>
+
+                <h6 class="help-block sample-show-hide font-alt" style="text-align:center" ng-show="accountCtrl.wrongUserOrPassword">
+                    Combinação de usuário e senha inválida
+                </h6>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-xs-6">
+
+                    <!-- Inform Tip -->
+                    <div class="form-tip pt-20">
+                        <a ng-href="#!/PedirTrocarSenha">Esqueceu a senha?</a>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-6">
+
+                    <!-- Send Button -->
+                    <div class="align-right pt-10">
+                        <button class="submit_btn btn btn-mod btn-medium btn-round" id="login-btn" ng-click="formLogin.submit()">Entrar</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+<!-- End Login Form -->

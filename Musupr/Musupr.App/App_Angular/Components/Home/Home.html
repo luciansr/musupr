@@ -1,0 +1,143 @@
+﻿ <!-- Home Section -->
+<section class="home-section bg-dark parallax-2" style="background-image: url('../../Content/Images/parallax-2.jpg');" id="home">
+    <rhythm-header size="full">
+
+        <!-- Hero Content -->
+        <div class="home-content container">
+            <div class="home-text">
+
+                <h1 class="hs-line-8 no-transp font-alt mb-50 mb-xs-30">
+                    Melhor plataforma de anúncio de vagas para Universitários
+                </h1>
+
+                <h2 class="hs-line-14 font-alt mb-50 mb-xs-30">
+                    M U S U P R
+                </h2>
+
+                <div class="local-scroll">
+                    <a href="#!/Vagas" class="btn btn-mod btn-w btn-medium btn-round">Ver vagas</a>
+                    <span class="hidden-xs">&nbsp;</span>
+                    <a href="#!/NovaVaga" class="btn btn-mod btn-w btn-medium btn-round">Anuncie vagas</a>
+                </div>
+
+            </div>
+        </div>
+        <!-- End Hero Content -->
+        <!-- Scroll Down -->
+        <!--<div class="local-scroll">
+            <a class="scroll-down"><i class="fa fa-angle-down scroll-down-icon"></i></a>
+        </div>-->
+        <!-- End Scroll Down -->
+
+    </rhythm-header>
+</section>
+<!-- End Home Section -->
+<!-- Services Section -->
+<section class="page-section pb-60 pt-40" id="services">
+    <div class="container relative">
+
+        <h2 class="section-title font-alt mb-70 mb-sm-40">
+            O que fazemos?
+        </h2>
+
+        <rhythm-tab custom="true" tabs="homeCtrl.tabs"></rhythm-tab>
+    </div>
+</section>
+<!-- End Services Section -->
+<!-- Blog Section -->
+<section class="page-section pt-40 bg-gray-lighter animate-ultimas-vagas" id="news" ng-if="homeCtrl.ultimasVagas.length > 0">
+    <div class="container relative">
+
+        <h2 class="section-title font-alt align-left mb-70 mb-sm-40">
+            Últimas vagas
+
+            <a href="#!/Vagas" class="section-more right">Mostrar todas vagas <i class="fa fa-angle-right"></i></a>
+
+        </h2>
+
+        <div class="row multi-columns-row">
+
+            <!-- Post Item -->
+            <div ng-repeat="vaga in homeCtrl.ultimasVagas" class="col-sm-6 col-md-4 col-lg-4 mb-md-50 wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
+
+                <rhythm-post-item vaga="vaga"></rhythm-post-item>
+
+            </div>
+            <!-- End Post Item -->
+
+
+        </div>
+
+    </div>
+</section>
+<!-- End Blog Section -->
+<hr class="mt-0 mb-0">
+<!-- Contact Section -->
+<section class="page-section pt-40" id="contact">
+    <div class="container relative">
+
+        <h2 class="section-title font-alt mb-70 mb-sm-40">
+            Contato
+        </h2>
+
+        <div class="row">
+
+            <div class="col-md-8 col-md-offset-2">
+                <div class="row">
+
+                    <!-- Phone -->
+                    <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
+                        <div class="contact-item">
+                            <div class="ci-icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="ci-title font-alt">
+                                Ligue
+                            </div>
+                            <div class="ci-text">
+                                +55 21 991947989
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Phone -->
+                    <!-- Address -->
+                    <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
+                        <div class="contact-item">
+                            <div class="ci-icon">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <div class="ci-title font-alt">
+                                Endereço
+                            </div>
+                            <div class="ci-text">
+                                <strong>UFRJ</strong><br>
+                                Av. Athos da Silveira Ramos <br>
+                                Rio de Janeiro, RJ - CEP 21941-611<br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Address -->
+                    <!-- Email -->
+                    <div class="col-sm-6 col-lg-4 pt-20 pb-20 pb-xs-0">
+                        <div class="contact-item">
+                            <div class="ci-icon">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div class="ci-title font-alt">
+                                Email
+                            </div>
+                            <div class="ci-text">
+                                <a href="mailto:luciansr@gmail.com">luciansr@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Email -->
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- End Contact Section -->

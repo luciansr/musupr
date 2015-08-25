@@ -1,0 +1,85 @@
+﻿<!-- Registry Form -->
+<div class="row" ng-controller="AccountController as accountCtrl">
+    <div class="col-md-4 col-md-offset-4">
+
+        <form class="form contact-form" name="formRegistro" ng-submit="accountCtrl.RegistrarUsuario()" novalidate>
+            <div class="clearfix">
+                <!-- Username -->
+                <div class="form-group">
+                    <input type="text" name="nome" class="input-md round form-control" placeholder="NOME"
+                           style="text-transform:none !important"
+                           ng-minlength="2" required ng-model="accountCtrl.newUser.Nome"
+                           ng-pattern="/^[^<>]+$/i">
+                </div>
+                <div ng-messages="formRegistro.nome.$error" ng-if="formRegistro.nome.$touched">
+                    <div ng-message="minlength"><h6 class="font-alt">Tamanho mínimo de 2 caracteres</h6></div>
+                    <div ng-message="pattern"><h6 class="font-alt">Caracteres "<" e ">" não permitidos</h6></div>
+                </div>
+
+
+                <!-- Username -->
+                <div class="form-group">
+                    <input type="text" name="userID"
+                           class="input-md round form-control"
+                           placeholder="ID DE USUÁRIO"
+                           ng-minlength="6" required
+                           ng-model="accountCtrl.newUser.userID"
+                           ng-model-options="{ debounce: 300 }"
+                           ng-pattern="/^[^@.<>]+$/i"
+                           username-unique>
+                </div>
+                <!--<div ng-show="formRegistro.userID.$pending.usernameUnique"><h6 class="font-alt">Verificando usuário</h6></div>-->
+                <div ng-messages="formRegistro.userID.$error" ng-if="formRegistro.userID.$dirty">
+                    <div ng-message="pattern"><h6 class="font-alt">Caracteres "@", ".", "<" e ">" não permitidos</h6></div>
+                    <div ng-message="minlength"><h6 class="font-alt">Tamanho mínimo de 6 caracteres</h6></div>
+                    <div ng-message="usernameUnique"><h6 class="font-alt">Nome de usuário já utilizado</h6></div>
+                </div>
+
+                <!-- Username -->
+                <div class="form-group">
+                    <input type="email" name="email"
+                           class="input-md round form-control"
+                           placeholder="E-MAIL PARA CONTATO" required
+                           ng-model="accountCtrl.newUser.email"
+                           ng-pattern="/^[a-z0-9!#$%&'*+/=?^_`{|}~.-]+@[a-z0-9-]+\.([a-z0-9])+(\.[a-z0-9]+)*$/i"
+                           ng-model-options="{ debounce: 300 }"
+                           style="text-transform:none !important"
+                           email-unique>
+                </div>
+                <!--<div ng-show="formRegistro.email.$pending.emailUnique"><h6 class="font-alt">Verificando e-mail</h6></div>-->
+                <div ng-messages="formRegistro.email.$error" ng-if="formRegistro.email.$touched">
+                    <div ng-message="pattern"><h6 class="font-alt">Use um e-mail válido</h6></div>
+                    <div ng-message="emailUnique"><h6 class="font-alt">Email já utilizado</h6></div>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <input type="password" name="password" id="password" class="input-md round form-control" placeholder="Senha" ng-minlength="6" required ng-model="accountCtrl.newUser.password">
+                </div>
+                <div ng-messages="formRegistro.password.$error" ng-if="formRegistro.password.$touched">
+                    <div ng-message="minlength"><h6 class="font-alt">Tamanho mínimo de 6 caracteres</h6></div>
+                </div>
+
+                <!-- Re-enter Password -->
+                <div class="form-group">
+                    <input type="password" class="input-md round form-control" name="password2" placeholder="Repetir senha" ng-model="accountCtrl.newUser.password2" password-verify="accountCtrl.newUser.password" required>
+                </div>
+                <div ng-messages="formRegistro.password2.$error" ng-if="formRegistro.password2.$dirty">
+                    <div ng-message="passwordVerify"><h6 class="font-alt">Senhas devem ser iguais</h6></div>
+                </div>
+                <div class="form-group">
+                    <div class="pull-right" on-create="accountCtrl.salvaWidgetId(widgetId)" vc-recaptcha theme="light" key="'6LfunAITAAAAAPRdM2NhuUB4KqCCnHbCaW-qbPFV'"></div>
+                </div>
+
+            </div>
+
+            <!-- Send Button -->
+            <div class="align-right pt-10">
+                <button class="submit_btn btn btn-mod btn-medium btn-round" id="login-btn" ng-click="formRegistro.submit()">Cadastrar</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+<!-- End Registry Form -->

@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7065B1D5-1D04-458B-93DD-10847FE07D41}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Musupr.App</RootNamespace>
+    <AssemblyName>Musupr.App</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors">
+      <HintPath>..\..\packages\Microsoft.Owin.Cors.3.0.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Owin.5.2.2\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Angular\Components\PedirTrocarSenha\PedirTrocarSenha.html" />
+    <Content Include="App_Angular\Components\TrocarSenha\TrocarSenha.html" />
+    <Content Include="App_Angular\Components\Regras\Regras.html" />
+    <Content Include="App_Angular\Components\Sobre\Sobre.html" />
+    <Content Include="App_Angular\Components\Home\Home.html" />
+    <Content Include="App_Angular\Components\Home\Tabs\tab3.html" />
+    <Content Include="App_Angular\Components\Home\Tabs\tab2.html" />
+    <Content Include="App_Angular\Components\Home\Tabs\tab1.html" />
+    <Content Include="App_Angular\Components\Login\Login.html" />
+    <Content Include="App_Angular\Components\Login\Tabs\LoginTab.html" />
+    <Content Include="App_Angular\Components\Login\Tabs\RegisterTab.html" />
+    <Content Include="App_Angular\Components\MeusAnuncios\MeusAnuncios.html" />
+    <Content Include="App_Angular\Components\NovaVaga\NovaVaga.html" />
+    <Content Include="App_Angular\Components\Shared\404\404.html" />
+    <Content Include="App_Angular\Components\Usuario\Usuario.html" />
+    <Content Include="App_Angular\Components\Vagas\Vagas.html" />
+    <Content Include="App_Angular\Components\Vaga\Vaga.html" />
+    <TypeScriptCompile Include="App_Angular\Components\PedirTrocarSenha\PedirTrocarSenhaController.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\AsyncValidators\EmailUniqueDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\AsyncValidators\UsernameUniqueDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\PasswordVerify\PasswordVerifyDirective.ts" />
+    <Content Include="App_Angular\Directives\RhythmPostItem\RhythmPostItemTemplate.html" />
+    <Content Include="App_Angular\Directives\RhythmSidebar\RhythmSidebarTemplate.html" />
+    <Content Include="App_Angular\Directives\RhythmPagination\RhythmPaginationTemplate.html" />
+    <Content Include="App_Angular\Directives\RhythmTab\RhythmTabAnimation.min.css">
+      <DependentUpon>RhythmTabAnimation.css</DependentUpon>
+    </Content>
+    <Content Include="App_Angular\Directives\RhythmTab\RhythmTabTemplate.html" />
+    <Content Include="Content\Images\70x70.jpg" />
+    <Content Include="Content\Images\favicon114x114.png" />
+    <Content Include="Content\Images\favicon32x32.png" />
+    <Content Include="Content\Images\favicon57x57.png" />
+    <Content Include="Content\Images\favicon72x72.png" />
+    <Content Include="Content\Images\logo-branco.png" />
+    <Content Include="Content\Images\logo-preto.png" />
+    <Content Include="Content\Images\parallax-1.jpg" />
+    <Content Include="Content\Images\parallax-2.jpg" />
+    <Content Include="Content\Images\slider-bg1.jpg" />
+    <Content Include="Content\Images\texture\2104-2.jpg" />
+    <Content Include="Content\Images\texture\2104-3.jpg" />
+    <Content Include="Content\Images\texture\2104-4.jpg" />
+    <Content Include="Content\Images\texture\2104-5.jpg" />
+    <Content Include="Content\Images\texture\2104.jpg" />
+    <Content Include="Content\libs\angular-social-share\angular-social-share.min.css" />
+    <Content Include="Content\libs\Musupr.css" />
+    <Content Include="App_Angular\Directives\RhythmTab\RhythmTabAnimation.css" />
+    <Content Include="Content\libs\MusuprAnimation.css" />
+    <Content Include="Content\libs\rhythm\css\AjaxLoader.gif" />
+    <Content Include="Content\libs\rhythm\css\animate.min.css" />
+    <Content Include="Content\libs\rhythm\css\bootstrap.min.css" />
+    <Content Include="Content\libs\rhythm\css\et-line.css" />
+    <Content Include="Content\libs\rhythm\css\font-awesome.min.css" />
+    <Content Include="Content\libs\rhythm\css\grabbing.png" />
+    <Content Include="Content\libs\rhythm\css\magnific-popup.css" />
+    <Content Include="Content\libs\rhythm\css\owl.carousel.css" />
+    <Content Include="Content\libs\rhythm\css\owl.transitions.css" />
+    <Content Include="Content\libs\rhythm\css\rev-slider.css" />
+    <Content Include="Content\libs\rhythm\css\simpletextrotator.css" />
+    <Content Include="Content\libs\rhythm\css\style-responsive.css" />
+    <Content Include="Content\libs\rhythm\css\style.css" />
+    <Content Include="Content\libs\rhythm\css\vertical-rhythm.min.css" />
+    <Content Include="Content\libs\rhythm\css\YTPlayer.css" />
+    <Content Include="Content\libs\rhythm\fonts\et-line.svg" />
+    <Content Include="Content\libs\rhythm\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\libs\rhythm\images\apple-touch-icon-114x114.png" />
+    <Content Include="Content\libs\rhythm\images\apple-touch-icon-72x72.png" />
+    <Content Include="Content\libs\rhythm\images\apple-touch-icon.png" />
+    <Content Include="Content\libs\rhythm\images\blog\masonry\post-prev-1.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\masonry\post-prev-10.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\masonry\post-prev-11.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\masonry\post-prev-2.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\masonry\post-prev-3.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\masonry\post-prev-4.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\masonry\post-prev-5.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\masonry\post-prev-6.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\masonry\post-prev-7.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\masonry\post-prev-8.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\masonry\post-prev-9.jpg" />
+    <Content Include="Content\Images\370x200.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\post-prev-1.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\post-prev-10.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\post-prev-11.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\post-prev-12.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\post-prev-2.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\post-prev-3.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\post-prev-4.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\post-prev-5.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\post-prev-6.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\post-prev-7.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\post-prev-8.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\post-prev-9.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\previews\post-prev-1.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\previews\post-prev-2.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\previews\post-prev-3.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\previews\post-prev-4.jpg" />
+    <Content Include="Content\libs\rhythm\images\blog\previews\post-prev-5.jpg" />
+    <Content Include="Content\libs\rhythm\images\bx_loader.gif" />
+    <Content Include="Content\libs\rhythm\images\clients-logos\client-1.png" />
+    <Content Include="Content\libs\rhythm\images\clients-logos\client-2.png" />
+    <Content Include="Content\libs\rhythm\images\clients-logos\client-3.png" />
+    <Content Include="Content\libs\rhythm\images\clients-logos\client-4.png" />
+    <Content Include="Content\libs\rhythm\images\clients-logos\client-5.png" />
+    <Content Include="Content\libs\rhythm\images\clients-logos\client-6.png" />
+    <Content Include="Content\libs\rhythm\images\clients-logos\with-bg\client-1.jpg" />
+    <Content Include="Content\libs\rhythm\images\clients-logos\with-bg\client-2.jpg" />
+    <Content Include="Content\libs\rhythm\images\clients-logos\with-bg\client-3.jpg" />
+    <Content Include="Content\libs\rhythm\images\clients-logos\with-bg\client-4.jpg" />
+    <Content Include="Content\libs\rhythm\images\clients-logos\with-bg\client-5.jpg" />
+    <Content Include="Content\libs\rhythm\images\clients-logos\with-bg\client-6.jpg" />
+    <Content Include="Content\libs\rhythm\images\controls.png" />
+    <Content Include="Content\libs\rhythm\images\favicon.ico" />
+    <Content Include="Content\libs\rhythm\images\favicon.png" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-1.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-10.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-11.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-12.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-14.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-15.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-16.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-17.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-18.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-19.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-2.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-20.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-21.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-22.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-23.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-24.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-25.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-3.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-4.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-5.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-6.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-7.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-8.jpg" />
+    <Content Include="Content\libs\rhythm\images\full-width-images\section-bg-9.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-0.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-1.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-10.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-11.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-12.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-13.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-14.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-15.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-16.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-17.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-18.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-2.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-3.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-4.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-5.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-6.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-7.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-8.jpg" />
+    <Content Include="Content\libs\rhythm\images\intro\intro-9.jpg" />
+    <Content Include="Content\libs\rhythm\images\loader.gif" />
+    <Content Include="Content\libs\rhythm\images\logo-dark.png" />
+    <Content Include="Content\libs\rhythm\images\logo-footer.png" />
+    <Content Include="Content\libs\rhythm\images\logo-white.png" />
+    <Content Include="Content\libs\rhythm\images\map-marker.png" />
+    <Content Include="Content\libs\rhythm\images\mobile-video-placeholder.jpg" />
+    <Content Include="Content\libs\rhythm\images\pattern-bg-2.png" />
+    <Content Include="Content\libs\rhythm\images\portfolio\full-project-1.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\full-project-2.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\full-project-3.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\full-project-4.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\full-project-5.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\full-project-6.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\masonry\projects-2.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\masonry\projects-6.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\masonry\projects-7.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-1.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-10.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-11.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-12.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-13.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-14.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-15.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-2.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-3.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-4.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-5.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-6.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-7.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-8.jpg" />
+    <Content Include="Content\libs\rhythm\images\portfolio\projects-9.jpg" />
+    <Content Include="Content\libs\rhythm\images\promo-1.png" />
+    <Content Include="Content\libs\rhythm\images\promo-2.png" />
+    <Content Include="Content\libs\rhythm\images\promo-3.png" />
+    <Content Include="Content\libs\rhythm\images\promo-4.png" />
+    <Content Include="Content\libs\rhythm\images\shop\previews\shop-prev-1.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\previews\shop-prev-2.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\previews\shop-prev-3.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\previews\shop-prev-4.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\previews\shop-prev-5.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\shop-prev-1.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\shop-prev-10.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\shop-prev-11.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\shop-prev-12.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\shop-prev-2.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\shop-prev-3.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\shop-prev-4.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\shop-prev-5.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\shop-prev-6.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\shop-prev-7.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\shop-prev-8.jpg" />
+    <Content Include="Content\libs\rhythm\images\shop\shop-prev-9.jpg" />
+    <Content Include="Content\libs\rhythm\images\team\team-1.jpg" />
+    <Content Include="Content\libs\rhythm\images\team\team-2.jpg" />
+    <Content Include="Content\libs\rhythm\images\team\team-3.jpg" />
+    <Content Include="Content\libs\rhythm\images\team\team-4.jpg" />
+    <Content Include="Content\libs\rhythm\images\user-avatar.png" />
+    <Content Include="Content\libs\rs-plugin\assets\arrowleft.png" />
+    <Content Include="Content\libs\rs-plugin\assets\arrowright.png" />
+    <Content Include="Content\libs\rs-plugin\assets\arrow_large_left.png" />
+    <Content Include="Content\libs\rs-plugin\assets\arrow_large_right.png" />
+    <Content Include="Content\libs\rs-plugin\assets\arrow_left.png" />
+    <Content Include="Content\libs\rs-plugin\assets\arrow_left2.png" />
+    <Content Include="Content\libs\rs-plugin\assets\arrow_right.png" />
+    <Content Include="Content\libs\rs-plugin\assets\arrow_right2.png" />
+    <Content Include="Content\libs\rs-plugin\assets\black50.png" />
+    <Content Include="Content\libs\rs-plugin\assets\boxed_bgtile.png" />
+    <Content Include="Content\libs\rs-plugin\assets\bullet.png" />
+    <Content Include="Content\libs\rs-plugin\assets\bullets.png" />
+    <Content Include="Content\libs\rs-plugin\assets\bullets2.png" />
+    <Content Include="Content\libs\rs-plugin\assets\bullet_boxed.png" />
+    <Content Include="Content\libs\rs-plugin\assets\coloredbg.png" />
+    <Content Include="Content\libs\rs-plugin\assets\grain.png" />
+    <Content Include="Content\libs\rs-plugin\assets\gridtile.png" />
+    <Content Include="Content\libs\rs-plugin\assets\gridtile_3x3.png" />
+    <Content Include="Content\libs\rs-plugin\assets\gridtile_3x3_white.png" />
+    <Content Include="Content\libs\rs-plugin\assets\gridtile_white.png" />
+    <Content Include="Content\libs\rs-plugin\assets\large_left.png" />
+    <Content Include="Content\libs\rs-plugin\assets\large_right.png" />
+    <Content Include="Content\libs\rs-plugin\assets\loader.gif" />
+    <Content Include="Content\libs\rs-plugin\assets\loader2.gif" />
+    <Content Include="Content\libs\rs-plugin\assets\navigdots.png" />
+    <Content Include="Content\libs\rs-plugin\assets\navigdots_bgtile.png" />
+    <Content Include="Content\libs\rs-plugin\assets\shadow1.png" />
+    <Content Include="Content\libs\rs-plugin\assets\shadow2.png" />
+    <Content Include="Content\libs\rs-plugin\assets\shadow3.png" />
+    <Content Include="Content\libs\rs-plugin\assets\small_left.png" />
+    <Content Include="Content\libs\rs-plugin\assets\small_left_boxed.png" />
+    <Content Include="Content\libs\rs-plugin\assets\small_right.png" />
+    <Content Include="Content\libs\rs-plugin\assets\small_right_boxed.png" />
+    <Content Include="Content\libs\rs-plugin\assets\timer.png" />
+    <Content Include="Content\libs\rs-plugin\assets\timerdot.png" />
+    <Content Include="Content\libs\rs-plugin\assets\transparent.jpg" />
+    <Content Include="Content\libs\rs-plugin\assets\white50.png" />
+    <Content Include="Content\libs\rs-plugin\css\settings-ie8.css" />
+    <Content Include="Content\libs\rs-plugin\css\settings.css" />
+    <Content Include="Content\libs\rs-plugin\font\revicons.svg" />
+    <Content Include="Content\libs\rs-plugin\images\decor_inside.png" />
+    <Content Include="Content\libs\rs-plugin\images\decor_inside_white.png" />
+    <Content Include="Content\libs\rs-plugin\images\decor_testimonial.png" />
+    <Content Include="Content\libs\rs-plugin\images\gradient\g30.png" />
+    <Content Include="Content\libs\rs-plugin\images\gradient\g40.png" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="index.html" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <Content Include="Scripts\libs\angular-markdown\angular-markdown.js" />
+    <Content Include="Scripts\libs\angular-markdown\showdown.js" />
+    <Content Include="Scripts\libs\angular-messages\angular-messages.min.js" />
+    <Content Include="Scripts\libs\angular-recaptcha\angular-recaptcha.js" />
+    <Content Include="Scripts\libs\angular-smart-table\angular-smart-table.js" />
+    <Content Include="Scripts\libs\angular-spin\angular-spinner.min.js" />
+    <Content Include="Scripts\libs\angular-spin\spin.min.js" />
+    <Content Include="Scripts\libs\angulartics\angularitcs-ga.js" />
+    <Content Include="Scripts\libs\angulartics\angularitcs.js" />
+    <Content Include="Scripts\libs\angular\angular-animate-1.3.11.min.js" />
+    <Content Include="Scripts\libs\angular\angular-locale_pt-br.js" />
+    <Content Include="Scripts\libs\angular\angular-route-1.3.10.min.js" />
+    <Content Include="Scripts\libs\angular\angular-aria-1.3.10.min.js" />
+    <Content Include="Scripts\libs\angular\angular-sanitize-1.3.13.min.js" />
+    <Content Include="Scripts\libs\rhythm\js\all.js" />
+    <Content Include="Scripts\libs\rhythm\js\bootstrap.min.js" />
+    <Content Include="Scripts\libs\rhythm\js\contact-form.js" />
+    <Content Include="Scripts\libs\rhythm\js\gmap3.min.js" />
+    <Content Include="Scripts\libs\rhythm\js\imagesloaded.pkgd.min.js" />
+    <Content Include="Scripts\libs\rhythm\js\isotope.pkgd.min.js" />
+    <Content Include="Scripts\libs\rhythm\js\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\libs\rhythm\js\jquery.appear.js" />
+    <Content Include="Scripts\libs\rhythm\js\jquery.countTo.js" />
+    <Content Include="Scripts\libs\rhythm\js\jquery.easing.1.3.js" />
+    <Content Include="Scripts\libs\rhythm\js\jquery.fitvids.js" />
+    <Content Include="Scripts\libs\rhythm\js\jquery.localScroll.min.js" />
+    <Content Include="Scripts\libs\rhythm\js\jquery.magnific-popup.min.js" />
+    <Content Include="Scripts\libs\rhythm\js\jquery.mb.YTPlayer.js" />
+    <Content Include="Scripts\libs\rhythm\js\jquery.parallax-1.1.3.js" />
+    <Content Include="Scripts\libs\rhythm\js\jquery.scrollTo.min.js" />
+    <Content Include="Scripts\libs\rhythm\js\jquery.simple-text-rotator.min.js" />
+    <Content Include="Scripts\libs\rhythm\js\jquery.sticky.js" />
+    <Content Include="Scripts\libs\rhythm\js\jquery.viewport.mini.js" />
+    <Content Include="Scripts\libs\rhythm\js\masonry.pkgd.min.js" />
+    <Content Include="Scripts\libs\rhythm\js\owl.carousel.min.js" />
+    <Content Include="Scripts\libs\rhythm\js\placeholder.js" />
+    <Content Include="Scripts\libs\rhythm\js\rev-slider.js" />
+    <Content Include="Scripts\libs\rhythm\js\SmoothScroll.js" />
+    <Content Include="Scripts\libs\rhythm\js\wow.min.js" />
+    <Content Include="Scripts\libs\rs-plugin\js\jquery.themepunch.plugins.min.js" />
+    <Content Include="Scripts\libs\rs-plugin\js\jquery.themepunch.revolution.js" />
+    <Content Include="Scripts\libs\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Scripts\libs\rs-plugin\js\jquery.themepunch.tools.min.js" />
+    <Content Include="Scripts\libs\teste.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\UnityResolver.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AuthenticationProvider\AuthenticationHelper.cs" />
+    <Compile Include="AuthenticationProvider\AuthenticationProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\VagasController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Scripts\toastr.min.js.map" />
+    <Content Include="Content\libs\rhythm\css\ytp-regular.eot" />
+    <Content Include="Content\libs\rhythm\css\ytp-regular.ttf" />
+    <Content Include="Content\libs\rhythm\css\ytp-regular.woff" />
+    <Content Include="Content\libs\rhythm\fonts\et-line.eot" />
+    <Content Include="Content\libs\rhythm\fonts\et-line.ttf" />
+    <Content Include="Content\libs\rhythm\fonts\et-line.woff" />
+    <Content Include="Content\libs\rhythm\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\libs\rhythm\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\libs\rhythm\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\libs\rhythm\fonts\FontAwesome.otf" />
+    <Content Include="Scripts\libs\rs-plugin\js\.DS_Store" />
+    <Content Include="Content\libs\rs-plugin\assets\arrows.psd" />
+    <Content Include="Content\libs\rs-plugin\assets\bullets.psd" />
+    <Content Include="Content\libs\rs-plugin\assets\small_arrows.psd" />
+    <Content Include="Content\libs\rs-plugin\font\revicons.eot" />
+    <Content Include="Content\libs\rs-plugin\font\revicons.ttf" />
+    <Content Include="Content\libs\rs-plugin\font\revicons.woff" />
+    <Content Include="Scripts\libs\angular\angular-1.3.10.min.js" />
+    <Content Include="Scripts\libs\angular\angular-social-share\angular-social-share.min.js" />
+    <Content Include="Scripts\libs\rs-plugin\js\jquery.themepunch.revolution.min.js.map">
+      <DependentUpon>jquery.themepunch.revolution.min.js</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\SmarterASP.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="App_Angular\Components\MeusAnuncios\MeusAnunciosController.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\NovaVaga\NovaVagaController.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\TrocarSenha\TrocarSenhaController.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\Usuario\UsuarioController.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\Vaga\VagaController.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\DisqusDirective\DisqusDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\GoogleAdSense\GoogleAdSenseDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\RhythmHeader\RhythmHeaderDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\RhythmPostItem\RhythmPostItemDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\RhythmSidebar\RhythmSidebarDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\RhythmPagination\RhythmPaginationDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Directives\RhythmTab\RhythmTabDirective.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\Authentication\SecurityService.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\AdminService.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\UsuarioService.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\VagasService.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\Authentication\AccountService.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\Authentication\HttpInterceptorService.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\RhythmService.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\Menu\MenuController.ts" />
+    <TypeScriptCompile Include="App_Angular\MusuprAppModule.ts" />
+    <TypeScriptCompile Include="App_Angular\Services\LogService.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\Home\HomeController.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\Login\AccountController.ts" />
+    <TypeScriptCompile Include="App_Angular\Components\Vagas\VagasController.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-resource.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-route.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-sanitize.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular-scenario.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\toastr\toastr.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Musupr.Domain\Musupr.Domain.csproj">
+      <Project>{e01abb20-f2cd-48ab-a5b0-abb3584de4a9}</Project>
+      <Name>Musupr.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Musupr.Infrastructure\Musupr.Infrastructure.csproj">
+      <Project>{0781ed87-5d71-42c4-ae7c-2d2f52378c87}</Project>
+      <Name>Musupr.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Musupr.Service\Musupr.Service.csproj">
+      <Project>{c2b669e3-34e1-4917-9c0c-e2c82b076a7c}</Project>
+      <Name>Musupr.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61221</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61232/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

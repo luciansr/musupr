@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musupr.App", "Musupr\Musupr.App\Musupr.App.csproj", "{7065B1D5-1D04-458B-93DD-10847FE07D41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musupr.Domain", "Musupr\Musupr.Domain\Musupr.Domain.csproj", "{E01ABB20-F2CD-48AB-A5B0-ABB3584DE4A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musupr.Infrastructure", "Musupr\Musupr.Infrastructure\Musupr.Infrastructure.csproj", "{0781ED87-5D71-42C4-AE7C-2D2F52378C87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musupr.Repository", "Musupr\Musupr.Repository\Musupr.Repository.csproj", "{6733B08F-496E-4BDC-A4E1-E927724A8C90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musupr.Service", "Musupr\Musupr.Service\Musupr.Service.csproj", "{C2B669E3-34E1-4917-9C0C-E2C82B076A7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musupr.Tests", "Musupr\Musupr.Tests\Musupr.Tests.csproj", "{62565E00-FA89-42D5-8654-4CDE81121E94}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://luciansturiao.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Musupr\\Musupr.App\\Musupr.App.csproj
+		SccProjectName1 = Musupr/Musupr.App
+		SccLocalPath1 = Musupr\\Musupr.App
+		SccProjectUniqueName2 = Musupr\\Musupr.Domain\\Musupr.Domain.csproj
+		SccProjectName2 = Musupr/Musupr.Domain
+		SccLocalPath2 = Musupr\\Musupr.Domain
+		SccProjectUniqueName3 = Musupr\\Musupr.Infrastructure\\Musupr.Infrastructure.csproj
+		SccProjectName3 = Musupr/Musupr.Infrastructure
+		SccLocalPath3 = Musupr\\Musupr.Infrastructure
+		SccProjectUniqueName4 = Musupr\\Musupr.Repository\\Musupr.Repository.csproj
+		SccProjectName4 = Musupr/Musupr.Repository
+		SccLocalPath4 = Musupr\\Musupr.Repository
+		SccProjectUniqueName5 = Musupr\\Musupr.Service\\Musupr.Service.csproj
+		SccProjectName5 = Musupr/Musupr.Service
+		SccLocalPath5 = Musupr\\Musupr.Service
+		SccProjectUniqueName6 = Musupr\\Musupr.Tests\\Musupr.Tests.csproj
+		SccProjectName6 = Musupr/Musupr.Tests
+		SccLocalPath6 = Musupr\\Musupr.Tests
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7065B1D5-1D04-458B-93DD-10847FE07D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7065B1D5-1D04-458B-93DD-10847FE07D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7065B1D5-1D04-458B-93DD-10847FE07D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7065B1D5-1D04-458B-93DD-10847FE07D41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E01ABB20-F2CD-48AB-A5B0-ABB3584DE4A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E01ABB20-F2CD-48AB-A5B0-ABB3584DE4A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E01ABB20-F2CD-48AB-A5B0-ABB3584DE4A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E01ABB20-F2CD-48AB-A5B0-ABB3584DE4A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0781ED87-5D71-42C4-AE7C-2D2F52378C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0781ED87-5D71-42C4-AE7C-2D2F52378C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0781ED87-5D71-42C4-AE7C-2D2F52378C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0781ED87-5D71-42C4-AE7C-2D2F52378C87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6733B08F-496E-4BDC-A4E1-E927724A8C90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6733B08F-496E-4BDC-A4E1-E927724A8C90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6733B08F-496E-4BDC-A4E1-E927724A8C90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6733B08F-496E-4BDC-A4E1-E927724A8C90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2B669E3-34E1-4917-9C0C-E2C82B076A7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2B669E3-34E1-4917-9C0C-E2C82B076A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2B669E3-34E1-4917-9C0C-E2C82B076A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2B669E3-34E1-4917-9C0C-E2C82B076A7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62565E00-FA89-42D5-8654-4CDE81121E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62565E00-FA89-42D5-8654-4CDE81121E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62565E00-FA89-42D5-8654-4CDE81121E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62565E00-FA89-42D5-8654-4CDE81121E94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

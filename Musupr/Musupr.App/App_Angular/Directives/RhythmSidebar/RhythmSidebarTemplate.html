@@ -1,0 +1,96 @@
+﻿<div>
+    <!-- Search Widget -->
+    <div class="widget">
+        <form class="form-inline form" ng-submit="sideBarCtrl.buscaVagas(sideBarCtrl.busca)" role="form">
+            <div class="search-wrap">
+                <button class="search-button animate" type="submit" title="Digite sua pesquisa">
+                    <i class="fa fa-search"></i>
+                </button>
+                <input type="text" class="form-control search-field" ng-model="sideBarCtrl.busca" placeholder="Pesquisa...">
+            </div>
+        </form>
+    </div>
+    <!-- End Search Widget -->
+
+    <!-- Widget -->
+    <div class="widget" ng-if="sideBarCtrl.carregado()">
+
+        <h5 class="widget-title font-alt">Categorias</h5>
+
+        <div class="widget-body">
+            <ul class="clearlist widget-menu">
+                <li ng-repeat="tipoVagaCounter in sideBarCtrl.tipoVagaCounter">
+                    <a ng-href="#!/Vagas/1/{{tipoVagaCounter.tipo.Nome}}" title="" ng-bind="tipoVagaCounter.tipo.Nome"></a>
+                    <small ng-bind="'- ' + tipoVagaCounter.quantidade"></small>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- End Widget -->
+    <!-- Widget -->
+    <div class="widget" ng-if="sideBarCtrl.carregado()">
+
+        <h5 class="widget-title font-alt">Tags</h5>
+
+        <div class="widget-body">
+            <div class="tags">
+                <a ng-href="#!/Vagas/1/{{tag}}" ng-repeat="tag in sideBarCtrl.tags" ng-bind="tag"></a>
+            </div>
+        </div>
+
+    </div>
+    <!-- End Widget -->
+    <!-- Widget -->
+    <div class="widget" ng-if="sideBarCtrl.carregado()">
+
+        <h5 class="widget-title font-alt">Últimas oportunidades</h5>
+
+        <div class="widget-body">
+            <ul class="clearlist widget-posts">
+                <li class="clearfix" ng-repeat="oportunidade in sideBarCtrl.ultimasOportunidades">
+                    <a ng-href="#!/Vaga/{{oportunidade.ID}}">
+                        <div ng-style="{'background-image':oportunidade.ThumbnailUrl ? 'url(' + oportunidade.ThumbnailUrl + ')': 'url(/Content/Images/70x70.jpg)'}"
+                             style="height:70px; width:70px;" alt=""
+                             class="widget-posts-img center-cover-image-div">
+                        </div>
+                    </a>
+                    <div class="widget-posts-descr">
+                        <a ng-href="#!/Vaga/{{oportunidade.ID}}" title="" ng-bind="oportunidade.Titulo"></a>
+                        <a ng-href="#!/Usuario/{{oportunidade.CriadorID}}" ng-bind="oportunidade.CriadorNome" style="font-size:12px; display:inline;"></a><span ng-bind="' em ' + (oportunidade.DataCriacao | date:'d MMM')"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- End Widget -->
+    <!-- Widget -->
+    <!--<div class="widget" ng-if="sideBarCtrl.carregado()">
+
+        <h5 class="widget-title font-alt">Comentários</h5>
+
+        <div class="widget-body">
+            <ul class="clearlist widget-comments">
+                <li>
+                    John Doe on <a href="#" title="">Lorem ipsum dolor sit amet</a>
+                </li>
+                <li>
+                    Emma Johnson on <a href="#" title="">Suspendisse accumsan interdum tellus</a>
+                </li>
+                <li>
+                    John Doe on <a href="#" title="">Praesent ultricies ut ipsum</a>
+                </li>
+                <li>
+                    Mark Deen on <a href="#" title="">Vivamus malesuada vel nulla vulputate</a>
+                </li>
+                <li>
+                    Sam Brin on <a href="#" title="">Aenean auctor egestas auctor</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>-->
+    <!-- End Widget -->
+
+</div>

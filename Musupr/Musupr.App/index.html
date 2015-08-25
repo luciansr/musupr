@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html ng-app="MusuprApp">
+<head>
+    <title>Musupr &mdash; Plataforma de anúncio de vagas</title>
+    <meta name="description" content="Melhor plataforma de anúncio de vagas para Universitários já criada. Permite uma utilização intuitiva e rápida, além de proporcionar fácil divulgação das oportunidades.">
+    <meta name="keywords" content="cursos, universitários, anúncios, vagas, estágios, trainee, graduação, iniciação científica, carreira, profissional">
+    <meta charset="utf-8">
+    <meta name="author" content="Lucian Sturião Rodrigues">
+    <meta name="robots" content="all">
+    <meta name="title" content="Musupr - Anuncie vagas para universitários!">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="Content/Images/favicon32x32.png">
+    <link rel="apple-touch-icon" href="Content/Images/favicon57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="Content/Images/favicon72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="Content/Images/favicon114x114.png">
+
+    <!-- Rhythm CSS -->
+    <link rel="stylesheet" href="Content/libs/rhythm/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/libs/rhythm/css/style.css">
+    <link rel="stylesheet" href="Content/libs/rhythm/css/style-responsive.css">
+    <link rel="stylesheet" href="Content/libs/rhythm/css/animate.min.css">
+    <link rel="stylesheet" href="Content/libs/rhythm/css/vertical-rhythm.min.css">
+    <link rel="stylesheet" href="Content/libs/rhythm/css/owl.carousel.css">
+    <link rel="stylesheet" href="Content/libs/rhythm/css/magnific-popup.css">
+    <!-- End Rhythm CSS -->
+    <!--Custom CSS-->
+    <link href="Content/toastr.css" rel="stylesheet" />
+
+    <link href="Content/libs/Musupr.css" rel="stylesheet" />
+    <link href="Content/libs/MusuprAnimation.css" rel="stylesheet" />
+    <link href="App_Angular/Directives/RhythmTab/RhythmTabAnimation.css" rel="stylesheet" />
+    <!--<link href="Content/libs/angular-social-share/angular-social-share.min.css" rel="stylesheet" />-->
+    <!--End Custom CSS-->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body class="appear-animate" ng-controller="AccountController as accountCtrl">
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader">Carregando...</div>
+    </div>
+    <!-- End Page Loader -->
+    <!-- Page Wrap -->
+    <div class="page" id="top">
+        <!-- Navigation panel -->
+        <nav ng-controller="MenuController as menuCtrl" class="main-nav dark transparent stick-fixed">
+            <div class="full-wrapper relative clearfix">
+                <!-- Logo ( * your text or image into link tag *) -->
+                <div class="nav-logo-wrap local-scroll">
+                    <a href="#!/" class="logo musupr-logo">
+                        <img src="Content/Images/logo-branco.png" width="118" height="27" alt="" />
+                    </a>
+                </div>
+                <div class="mobile-nav">
+                    <i class="fa fa-bars"></i>
+                </div>
+
+                <!-- Main Menu -->
+                <div class="inner-nav desktop-nav">
+                    <ul class="clearlist">
+
+                        <li>
+                            <a href="#!/"><i class="fa fa-home"></i> Início</a>
+                        </li>
+
+                        <li>
+                            <a href="#!/Vagas">Vagas</a>
+                        </li>
+                        <li>
+                            <a href="#!/NovaVaga">Nova vaga</a>
+                        </li>
+
+                        <!-- Divider -->
+                        <li><a>&nbsp;</a></li>
+                        <li>
+                            <a href="#!/Sobre">Sobre nós</a>
+                        </li>
+                        <li>
+                            <a href="#!/Regras">Regras e Avisos</a>
+                        </li>
+                        <li><a>&nbsp;</a></li>
+                        <!-- End Divider -->
+                        <!-- Search -->
+                        <li>
+                            <a href="#" class="mn-has-sub"><i class="fa fa-search"></i> Pesquisa</a>
+
+                            <ul class="mn-sub">
+
+                                <li>
+                                    <div class="mn-wrap">
+                                        <form method="post" class="form" ng-submit="menuCtrl.buscaVagas(menuCtrl.busca)">
+                                            <div class="search-wrap">
+                                                <button class="search-button animate" type="submit" title="Start Search">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                                <input type="text" class="form-control search-field" ng-model="menuCtrl.busca" placeholder="Pesquisa...">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </li>
+                        <!-- End Search -->
+                        <!-- Account -->
+                        <li ng-cloak>
+                            <a href="#" class="mn-has-sub"><i class="fa fa-user"></i> {{ accountCtrl.isLogged()  ? 'Olá, ' + accountCtrl.getUserInfo().Nome : 'Conta' }} <i class="fa fa-angle-down"></i></a>
+
+                            <ul class="mn-sub">
+
+                                <li ng-if="!accountCtrl.isLogged()"><a href="#!/Login">Login / Registro</a></li>
+                                <li><a ng-if="accountCtrl.isLogged()" ng-href="#!/Usuario/{{accountCtrl.getUserInfo().ID}}">Meu Perfil</a></li>
+                                <li><a ng-if="accountCtrl.isLogged()" ng-href="#!/MeusAnuncios">Meus Anúncios</a></li>
+                                <li><a href="javascript:void(0)" ng-if="accountCtrl.isLogged()" ng-click="accountCtrl.logout()">Sair</a></li>
+
+                            </ul>
+
+                        </li>
+                        <!-- End Account -->
+
+                    </ul>
+                </div>
+                <!-- End Main Menu -->
+
+
+            </div>
+        </nav>
+        <!-- End Navigation panel -->
+
+        <ng-view autoscroll="true"></ng-view>
+
+        <!-- Foter -->
+        <footer class="page-section bg-gray-lighter footer pb-60">
+            <div class="container">
+
+                <!-- Footer Logo -->
+                <div class="local-scroll mb-30 wow fadeInUp" data-wow-duration="1.5s">
+                    <a href="#top"><img src="Content/Images/logo-preto.png" width="120" alt="" /></a>
+                </div>
+                <!-- End Footer Logo -->
+                <!-- Social Links -->
+                <div class="footer-social-links mb-110 mb-xs-60">
+                    <a href="https://www.facebook.com/LucianSturiao1" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/profile/view?id=324076113" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
+                </div>
+                <!-- End Social Links -->
+                <!-- Footer Text -->
+                <div class="footer-text">
+
+                    <!-- Copyright -->
+                    <div class="footer-copy font-alt">
+                        <a href="#!/" target="_blank">&copy; Musupr 2015</a>.
+                    </div>
+                    <!-- End Copyright -->
+
+                    <div class="footer-made">
+                        Feito por um universitário para outros universitários.
+                    </div>
+
+                </div>
+                <!-- End Footer Text -->
+
+            </div>
+
+
+            <!-- Top Link -->
+            <div class="local-scroll">
+                <a href="#top" class="link-to-top"><i class="fa fa-caret-up"></i></a>
+            </div>
+            <!-- End Top Link -->
+
+        </footer>
+        <!-- End Foter -->
+
+
+    </div>
+    <!-- End Page Wrap -->
+    <!-- Rhythm JS -->
+
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/SmoothScroll.js"></script>
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/jquery.localScroll.min.js"></script>
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/jquery.viewport.mini.js"></script>
+
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/jquery.appear.js"></script>
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/jquery.sticky.js"></script>
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/jquery.parallax-1.1.3.js"></script>
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/jquery.fitvids.js"></script>
+
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/wow.min.js"></script>
+
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/jquery.simple-text-rotator.min.js"></script>
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/all.js"></script>
+    <script type="text/javascript" src="Scripts/libs/rhythm/js/contact-form.js"></script>
+    <!--[if lt IE 10]><script type="text/javascript" src="Scripts/libs/rhythm/js/placeholder.js"></script><![endif]-->
+    <!-- End Rhythm JS -->
+
+    <!-- AngularJS Files -->
+    <script src="Scripts/libs/angular/angular-1.3.10.min.js"></script>
+    <script src="Scripts/libs/angular/angular-aria-1.3.10.min.js"></script>
+    <script src="Scripts/libs/angular/angular-route-1.3.10.min.js"></script>
+    <script src="Scripts/libs/angular/angular-animate-1.3.11.min.js"></script>
+    <script src="Scripts/libs/angular/angular-locale_pt-br.js"></script>
+    <script src="Scripts/libs/angular/angular-sanitize-1.3.13.min.js"></script>
+    <!-- angulartics -->
+    <script src="Scripts/libs/angulartics/angularitcs.js"></script>
+    <script src="Scripts/libs/angulartics/angularitcs-ga.js"></script>
+    <!-- Custom AngularJS -->
+
+    <!--Custom JS-->
+
+    <script src="Scripts/toastr.js"></script>
+    <script src="Scripts/libs/angular-markdown/showdown.js"></script>
+    <script src="Scripts/libs/angular-markdown/angular-markdown.js"></script>
+    <script src="Scripts/libs/angular-spin/spin.min.js"></script>
+    <script src="Scripts/libs/angular-spin/angular-spinner.min.js"></script>
+    <script src="Scripts/libs/angular-smart-table/angular-smart-table.js"></script>
+    <script src="Scripts/libs/angular-messages/angular-messages.min.js"></script>
+
+    <!--<script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explict" async defer></script>-->
+    <script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>
+    
+    <script src="Scripts/libs/angular-recaptcha/angular-recaptcha.js"></script>
+
+    <!--<script src="Scripts/libs/angular/angular-social-share/angular-social-share.min.js"></script>-->
+    <!--End Custom JS-->
+
+    <!--Angular Module-->
+    <script src="App_Angular/MusuprAppModule.js"></script>
+
+    <!--Angular Services-->
+    <script src="App_Angular/Services/RhythmService.js"></script>
+
+    <script src="App_Angular/Services/Authentication/AccountService.js"></script>
+    <script src="App_Angular/Services/Authentication/HttpInterceptorService.js"></script>
+    <script src="App_Angular/Services/Authentication/SecurityService.js"></script>
+    <script src="App_Angular/Services/LogService.js"></script>
+    <script src="App_Angular/Services/VagasService.js"></script>
+    <script src="App_Angular/Services/UsuarioService.js"></script>
+    <script src="App_Angular/Services/AdminService.js"></script>
+
+    <!--Angular Directives-->
+    <script src="App_Angular/Directives/RhythmTab/RhythmTabDirective.js"></script>
+    <script src="App_Angular/Directives/RhythmPagination/RhythmPaginationDirective.js"></script>
+    <script src="App_Angular/Directives/RhythmHeader/RhythmHeaderDirective.js"></script>
+    <script src="App_Angular/Directives/RhythmSidebar/RhythmSidebarDirective.js"></script>
+    <script src="App_Angular/Directives/DisqusDirective/DisqusDirective.js"></script>
+    <script src="App_Angular/Directives/RhythmPostItem/RhythmPostItemDirective.js"></script>
+    <script src="App_Angular/Directives/GoogleAdSense/GoogleAdSenseDirective.js"></script>
+    <script src="App_Angular/Directives/PasswordVerify/PasswordVerifyDirective.js"></script>
+    <script src="App_Angular/Directives/AsyncValidators/UsernameUniqueDirective.js"></script>
+    <script src="App_Angular/Directives/AsyncValidators/EmailUniqueDirective.js"></script>
+
+    <!--Angular Controllers-->
+    <script src="App_Angular/Components/Home/HomeController.js"></script>
+    <script src="App_Angular/Components/Vagas/VagasController.js"></script>
+    <script src="App_Angular/Components/Vaga/VagaController.js"></script>
+    <script src="App_Angular/Components/Menu/MenuController.js"></script>
+    <script src="App_Angular/Components/Login/AccountController.js"></script>
+    <script src="App_Angular/Components/NovaVaga/NovaVagaController.js"></script>
+    <script src="App_Angular/Components/Usuario/UsuarioController.js"></script>
+    <script src="App_Angular/Components/MeusAnuncios/MeusAnunciosController.js"></script>
+    <script src="App_Angular/Components/TrocarSenha/TrocarSenhaController.js"></script>
+    <script src="App_Angular/Components/PedirTrocarSenha/PedirTrocarSenhaController.js"></script>
+    <!--<script src="App_Angular/AngularApp.min.js"></script>-->
+    <!-- End AngularJS Files -->
+    <script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-42276885-2', 'auto');
+    </script>
+</body>
+</html>

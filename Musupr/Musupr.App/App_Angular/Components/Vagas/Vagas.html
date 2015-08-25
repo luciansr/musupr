@@ -1,0 +1,63 @@
+﻿<!-- Section -->
+<section class="page-section bg-dark-alfa-30" style="background-image: url('../../Content/Images/slider-bg1.jpg');">
+    <div class="relative container align-left">
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Vagas</h1>
+                <div class="hs-line-4 font-alt">
+                    Encontre as melhores oportunidades para sua carreira
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-30">
+                <div class="mod-breadcrumbs font-alt align-right">
+                    <a href="#!/">Início</a>&nbsp;/&nbsp;<a href="#!/Vagas">Vagas</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- End Section -->
+<!-- Section -->
+<section class="page-section  pt-60 pb-60">
+    <div class="container relative">
+        <div class="page-relative-loader" ng-if="vagasCtrl.loading">
+            <div class="loader">Carregando...</div>
+        </div>
+
+        <div class="row">
+            <!-- Content -->
+            <div class="col-sm-8">
+                <div class="row" ng-if="!vagasCtrl.loading">
+                    <google-ad-sense></google-ad-sense>
+                </div>
+                <div class="row multi-columns-row">
+                    <h3 class="section-title font-alt mb-70 mb-sm-40" ng-if="vagasCtrl.naoTemDados() && !vagasCtrl.loading">
+                        Nenhuma vaga encontrada
+                    </h3>
+                    <!-- Post Item -->
+                    <div ng-repeat="vaga in vagasCtrl.vagasDaPagina" class="col-md-6 col-lg-6 mb-60 mb-xs-40">
+
+                        <rhythm-post-item vaga="vaga"></rhythm-post-item>
+
+                    </div>
+                    <!-- End Post Item -->
+
+                </div>
+
+
+                <rhythm-pagination selected-page="vagasCtrl.selectedPage" maximum-pages="{{vagasCtrl.numeroPaginas}}" ng-if="vagasCtrl.temDados()" range-to-show="2"></rhythm-pagination>
+            </div>
+            <!-- End Content -->
+            <!-- Sidebar -->
+            <rhythm-sidebar class="col-sm-4 col-md-3 col-md-offset-1 sidebar"></rhythm-sidebar>
+            <!-- End Sidebar -->
+        </div>
+
+    </div>
+</section>
+<!-- End Section -->

@@ -1,0 +1,39 @@
+﻿ <!-- Nav Tabs -->
+<div ng-cloak>
+    <div ng-if="!custom">
+        <div class="align-center mb-40 mb-xxs-30">
+            <ul class="nav nav-tabs" ng-class="{'tpl-minimal-tabs': minimal === 'true', 'tpl-tabs': minimal !== 'true'}">
+
+                <li ng-repeat="tab in tabs" ng-class="{'active': activeTabIndex == $index}">
+                    <a ng-click="setTabActive($index)">{{tab.title}}</a>
+                </li>
+            </ul>
+        </div>
+        <!-- End Nav Tabs -->
+        <!-- Tab panes -->
+        <div class="tab-content  section-text" ng-class="{'tpl-minimal-tabs-cont': minimal === 'true','tpl-tabs-cont': minimal !== 'true'}">
+            <div class="tab-pane active animate-if" ng-repeat="tab in tabs" ng-if="activeTabIndex == $index">
+                <ng-include src="tab.templateUrl"></ng-include>
+            </div>
+        </div>
+    </div>
+
+    <div ng-if="custom">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs tpl-alt-tabs font-alt pt-30 pt-sm-0 pb-30 pb-sm-0">
+            <li ng-repeat="tab in tabs" ng-class="{'active': activeTabIndex == $index}">
+                <div ng-bind-html="tab.tabContent" ng-click="setTabActive($index)"></div>
+            </li>
+        </ul>
+        <!-- End Nav tabs -->
+        <!-- Tab panes -->
+        <div class="tab-content tpl-tabs-cont">
+            <div class="tab-pane active animate-if" ng-repeat="tab in tabs" ng-if="activeTabIndex == $index">
+                <ng-include src="tab.templateUrl"></ng-include>
+            </div>
+        </div>
+        <!-- End Tab panes -->
+    </div>
+
+</div>
+<!-- End Nav Tabs -->

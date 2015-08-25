@@ -1,0 +1,47 @@
+﻿.sample-show-hide {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.sample-show-hide.ng-hide {
+  opacity:0;
+}
+
+.animate-if-musupr.ng-enter {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+.animate-if-musupr.ng-leave {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
+
+}
+
+.animate-if-musupr.ng-enter,
+.animate-if-musupr.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.animate-if-musupr.ng-leave,
+.animate-if-musupr.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+
+.animate-ultimas-vagas.ng-enter, .animate-ultimas-vagas.ng-leave {
+    -webkit-transition: 1s linear all;
+    -moz-transition: 1s linear all;
+    -ms-transition: 1s linear all;
+    -o-transition: 1s linear all;
+    transition: 1s linear all;
+}
+
+ .animate-ultimas-vagas.ng-enter {
+    max-height: 0;
+    opacity: 0;
+}
+
+ .animate-ultimas-vagas.ng-enter.ng-enter-active {
+    max-height: 999px;
+    opacity:1;
+}

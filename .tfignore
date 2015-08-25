@@ -1,0 +1,140 @@
+﻿################################################################################
+# This .tfignore file was automatically created by Microsoft(R) Visual Studio.
+#
+# Local items matching filespecs in this file will not be added to version
+# control. This file can be checked in to share exclusions with others.
+#
+# Wildcard characters are * and ?. Patterns are matched recursively unless the
+# pattern is prefixed by the \ character.
+#
+# You can prepend a path to a pattern to make it more specific. If you do,
+# wildcard characters are not permitted in the path portion.
+#
+# The # character at the beginning of a line indicates a comment.
+#
+# The ! prefix negates a pattern. This can be used to re-include an item after
+# it was excluded by a .tfignore file higher in the tree, or by the Team
+# Project Collection's global exclusions list.
+#
+# The / character is interpreted as a \ character on Windows platforms.
+#
+# Examples:
+#
+#  # Excludes all files ending in .txt in Alpha\Beta and all its subfolders.
+#  Alpha\Beta\*.txt
+#
+#  # Excludes all files ending in .cpp in this folder only.
+#  \*.cpp
+#
+#  # Excludes all files ending in .cpp in this folder and all subfolders.
+#  *.cpp
+#
+#  # If "Contoso" is a folder, then Contoso and all its children are excluded.
+#  # If it is a file, then only the "Contoso" in this folder is excluded.
+#  \Contoso
+#
+#  # If Help.exe is excluded by a higher .tfignore file or by the Team Project
+#  # Collection global exclusions list, then this pattern re-includes it in
+#  # this folder only.
+#  !\Help.exe    
+#
+################################################################################
+
+\Musupr\Musupr.App\App_Angular\Services\Authentication\SecurityService.js
+\Musupr\Musupr.App\App_Angular\Services\Authentication\SecurityService.js.map
+\Musupr\Musupr.App\App_Angular\Directives\RhythmPagination\RhythmPaginationDirective.js
+\Musupr\Musupr.App\App_Angular\Directives\RhythmPagination\RhythmPaginationDirective.js.map
+\Musupr\Musupr.App\App_Angular\Components\Vaga\VagaController.js
+\Musupr\Musupr.App\App_Angular\Components\Vaga\VagaController.js.map
+\Musupr\Musupr.App\App_Angular\Directives\RhythmHeader\RhythmHeaderDirective.js
+\Musupr\Musupr.App\App_Angular\Directives\RhythmHeader\RhythmHeaderDirective.js.map
+\Musupr\Musupr.App\App_Angular\Directives\RhythmSidebar\RhythmPaginationDirective.js
+\Musupr\Musupr.App\App_Angular\Directives\RhythmSidebar\RhythmPaginationDirective.js.map
+\Musupr\Musupr.App\App_Angular\Directives\RhythmSidebar\RhythmSidebarDirective.js
+\Musupr\Musupr.App\App_Angular\Directives\RhythmSidebar\RhythmSidebarDirective.js.map
+\Musupr\Musupr.App\App_Angular\Directives\DisqusDirective\DisqusDirective.js
+\Musupr\Musupr.App\App_Angular\Directives\DisqusDirective\DisqusDirective.js.map
+\Musupr\Musupr.App\App_Angular\Components\NovaVaga\NovaVagaController.js
+\Musupr\Musupr.App\App_Angular\Components\NovaVaga\NovaVagaController.js.map
+\Musupr\Musupr.App\App_Angular\Directives\GoogleAdSense\GoogleAdSenseDirective.js
+\Musupr\Musupr.App\App_Angular\Directives\GoogleAdSense\GoogleAdSenseDirective.js.map
+\Musupr\Musupr.App\App_Angular\Directives\RhythmPostItem\RhythmPostItemDirective.js
+\Musupr\Musupr.App\App_Angular\Directives\RhythmPostItem\RhythmPostItemDirective.js.map
+\Musupr\Musupr.App\App_Angular\Components\Usuario\UsuarioController.js
+\Musupr\Musupr.App\App_Angular\Components\Usuario\UsuarioController.js.map
+\Musupr\Musupr.App\App_Angular\Services\UsuarioService.js
+\Musupr\Musupr.App\App_Angular\Services\UsuarioService.js.map
+\Musupr\Musupr.App\App_Angular\Services\UsuariosService.js
+\Musupr\Musupr.App\App_Angular\Services\UsuariosService.js.map
+\Musupr\Musupr.App\App_Angular\Components\MeusAnuncios\MeusAnunciosController.js
+\Musupr\Musupr.App\App_Angular\Components\MeusAnuncios\MeusAnunciosController.js.map
+\Musupr\Musupr.App\App_Angular\Services\AdminService.js
+\Musupr\Musupr.App\App_Angular\Services\AdminService.js.map
+\Musupr\Musupr.App\App_Angular\Services\UsuarioService - Copy.js
+\Musupr\Musupr.App\App_Angular\Services\UsuarioService - Copy.js.map
+\Musupr\Musupr.App\App_Angular\Components\TrocarSenha\TrocarSenhaController.js
+\Musupr\Musupr.App\App_Angular\Components\TrocarSenha\TrocarSenhaController.js.map
+\Musupr\Musupr.App\App_Angular\Components\PedirTrocarSenha\PedirTrocarSenhaController.js
+\Musupr\Musupr.App\App_Angular\Components\PedirTrocarSenha\PedirTrocarSenhaController.js.map
+\Musupr\Musupr.App\App_Angular\Directives\AsyncValidators\EmailUniqueDirective.js
+\Musupr\Musupr.App\App_Angular\Directives\AsyncValidators\EmailUniqueDirective.js.map
+\Musupr\Musupr.App\App_Angular\Directives\AsyncValidators\UsernameUniqueDirective.js
+\Musupr\Musupr.App\App_Angular\Directives\AsyncValidators\UsernameUniqueDirective.js.map
+\Musupr\Musupr.App\App_Angular\Directives\PasswordVerify\PasswordVerifyDirective.js
+\Musupr\Musupr.App\App_Angular\Directives\PasswordVerify\PasswordVerifyDirective.js.map
+\Musupr\Musupr.App\App_Angular\MusuprAppModule.min.js
+\Musupr\Musupr.App\App_Angular\MusuprAppModule.min.js.map
+\Musupr\Musupr.App\App_Angular\Components\Home\HomeController.min.js
+\Musupr\Musupr.App\App_Angular\Components\Home\HomeController.min.js.map
+\Musupr\Musupr.App\App_Angular\Components\Login\AccountController.min.js
+\Musupr\Musupr.App\App_Angular\Components\Login\AccountController.min.js.map
+\Musupr\Musupr.App\App_Angular\Components\Menu\MenuController.min.js
+\Musupr\Musupr.App\App_Angular\Components\Menu\MenuController.min.js.map
+\Musupr\Musupr.App\App_Angular\Components\MeusAnuncios\MeusAnunciosController.min.js
+\Musupr\Musupr.App\App_Angular\Components\MeusAnuncios\MeusAnunciosController.min.js.map
+\Musupr\Musupr.App\App_Angular\Components\NovaVaga\NovaVagaController.min.js
+\Musupr\Musupr.App\App_Angular\Components\NovaVaga\NovaVagaController.min.js.map
+\Musupr\Musupr.App\App_Angular\Components\PedirTrocarSenha\PedirTrocarSenhaController.min.js
+\Musupr\Musupr.App\App_Angular\Components\PedirTrocarSenha\PedirTrocarSenhaController.min.js.map
+\Musupr\Musupr.App\App_Angular\Components\TrocarSenha\TrocarSenhaController.min.js
+\Musupr\Musupr.App\App_Angular\Components\TrocarSenha\TrocarSenhaController.min.js.map
+\Musupr\Musupr.App\App_Angular\Components\Usuario\UsuarioController.min.js
+\Musupr\Musupr.App\App_Angular\Components\Usuario\UsuarioController.min.js.map
+\Musupr\Musupr.App\App_Angular\Components\Vaga\VagaController.min.js
+\Musupr\Musupr.App\App_Angular\Components\Vaga\VagaController.min.js.map
+\Musupr\Musupr.App\App_Angular\Components\Vagas\VagasController.min.js
+\Musupr\Musupr.App\App_Angular\Components\Vagas\VagasController.min.js.map
+\Musupr\Musupr.App\App_Angular\Directives\AsyncValidators\EmailUniqueDirective.min.js
+\Musupr\Musupr.App\App_Angular\Directives\AsyncValidators\EmailUniqueDirective.min.js.map
+\Musupr\Musupr.App\App_Angular\Directives\AsyncValidators\UsernameUniqueDirective.min.js
+\Musupr\Musupr.App\App_Angular\Directives\AsyncValidators\UsernameUniqueDirective.min.js.map
+\Musupr\Musupr.App\App_Angular\Directives\DisqusDirective\DisqusDirective.min.js
+\Musupr\Musupr.App\App_Angular\Directives\DisqusDirective\DisqusDirective.min.js.map
+\Musupr\Musupr.App\App_Angular\Directives\GoogleAdSense\GoogleAdSenseDirective.min.js
+\Musupr\Musupr.App\App_Angular\Directives\GoogleAdSense\GoogleAdSenseDirective.min.js.map
+\Musupr\Musupr.App\App_Angular\Directives\PasswordVerify\PasswordVerifyDirective.min.js
+\Musupr\Musupr.App\App_Angular\Directives\PasswordVerify\PasswordVerifyDirective.min.js.map
+\Musupr\Musupr.App\App_Angular\Directives\RhythmHeader\RhythmHeaderDirective.min.js
+\Musupr\Musupr.App\App_Angular\Directives\RhythmHeader\RhythmHeaderDirective.min.js.map
+\Musupr\Musupr.App\App_Angular\Directives\RhythmPagination\RhythmPaginationDirective.min.js
+\Musupr\Musupr.App\App_Angular\Directives\RhythmPagination\RhythmPaginationDirective.min.js.map
+\Musupr\Musupr.App\App_Angular\Directives\RhythmPostItem\RhythmPostItemDirective.min.js
+\Musupr\Musupr.App\App_Angular\Directives\RhythmPostItem\RhythmPostItemDirective.min.js.map
+\Musupr\Musupr.App\App_Angular\Directives\RhythmSidebar\RhythmSidebarDirective.min.js
+\Musupr\Musupr.App\App_Angular\Directives\RhythmSidebar\RhythmSidebarDirective.min.js.map
+\Musupr\Musupr.App\App_Angular\Directives\RhythmTab\RhythmTabDirective.min.js
+\Musupr\Musupr.App\App_Angular\Directives\RhythmTab\RhythmTabDirective.min.js.map
+\Musupr\Musupr.App\App_Angular\Services\AdminService.min.js
+\Musupr\Musupr.App\App_Angular\Services\AdminService.min.js.map
+\Musupr\Musupr.App\App_Angular\Services\LogService.min.js
+\Musupr\Musupr.App\App_Angular\Services\LogService.min.js.map
+\Musupr\Musupr.App\App_Angular\Services\RhythmService.min.js
+\Musupr\Musupr.App\App_Angular\Services\RhythmService.min.js.map
+\Musupr\Musupr.App\App_Angular\Services\UsuarioService.min.js
+\Musupr\Musupr.App\App_Angular\Services\UsuarioService.min.js.map
+\Musupr\Musupr.App\App_Angular\Services\VagasService.min.js
+\Musupr\Musupr.App\App_Angular\Services\VagasService.min.js.map
+\Musupr\Musupr.App\App_Angular\Services\Authentication\HttpInterceptorService.min.js
+\Musupr\Musupr.App\App_Angular\Services\Authentication\HttpInterceptorService.min.js.map
+\Musupr\Musupr.App\App_Angular\Services\Authentication\SecurityService.min.js
+\Musupr\Musupr.App\App_Angular\Services\Authentication\SecurityService.min.js.map

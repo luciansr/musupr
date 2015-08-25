@@ -1,0 +1,103 @@
+﻿<!-- Section -->
+<section class="page-section bg-dark-alfa-30" ng-style="{'background-image':vagaCtrl.vaga.HeaderImageUrl ? 'url(' + vagaCtrl.vaga.HeaderImageUrl+ ')': 'url(../../../Content/Images/slider-bg1.jpg)'}">
+    <div class="relative container align-left">
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <h1 class="hs-line-11 font-alt mb-20 mb-xs-0" ng-bind="vagaCtrl.vaga.Titulo">Título</h1>
+                <div class="hs-line-4 font-alt" ng-bind="vagaCtrl.vaga.Descricao">
+                    Encontre as melhores oportunidades para sua carreira
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-30">
+                <div class="mod-breadcrumbs font-alt align-right">
+                    <a href="javascript:void(0)">Vaga</a>
+                    &nbsp;/&nbsp;<a ng-href="#!/Usuario/{{vagaCtrl.vaga.CriadorID}}" ng-bind="vagaCtrl.vaga.CriadorNome">Usuário</a>
+                    &nbsp;/&nbsp;<a href="javascript:void(0)" ng-bind="vagaCtrl.vaga.Titulo">Título</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- End Section -->
+<!-- Section -->
+<section class="page-section pt-60 pb-60">
+    <div class="container relative">
+        <div class="page-relative-loader" ng-if="false">
+            <div class="loader">Carregando...</div>
+        </div>
+        <div class="row">
+
+          
+            <!-- Content -->
+            <div class="col-sm-8">
+                <div class="row" ng-if="!vagasCtrl.loading">
+                    <google-ad-sense></google-ad-sense>
+                </div>
+                <!-- Post -->
+                <div class="blog-item mb-80 mb-xs-40 animate-ultimas-vagas" ng-if="vagaCtrl.vaga">
+
+                    <!-- Text -->
+                    <div class="blog-item-body" ng-init="vagaCtrl.shares = ''">
+                        <!--<a facebook class="facebookShare pull-right facebookShareMusupr" data-url='http://localhost:61232/#!/Vaga/{{vagaCtrl.vaga.ID}}' data-shares='vagaCtrl.shares'>{{ vagaCtrl.shares }}</a>-->
+                        <h1 class="mt-0 font-alt" ng-bind="vagaCtrl.vaga.Titulo">Here is the big headline for your blog post</h1> 
+
+                        <span class="lead" ng-bind-html="vagaCtrl.vaga.Descricao"></span>
+                        <!-- End Text -->
+
+
+                        <div btf-markdown="vagaCtrl.vaga.DescricaoMarkdown" class="mt-20"></div>
+
+                    </div>
+                    <!-- End Text -->
+
+                </div>
+                <!-- End Post -->
+                
+                <!--<div class="page-relative-loader mb-80 mt-80" ng-if="!vagaCtrl.vaga">
+                    <div class="loader">Carregando...</div>
+                </div>-->
+                <!-- Comments -->
+                <div class="mb-80 mb-xs-40">
+                    <disqus ng-if="vagaCtrl.vaga" disqus-id="Vaga/{{vagaCtrl.id}}" disqus-title="Vaga: {{vagaCtrl.vaga.Titulo}}"></disqus>
+                </div>
+                <!-- End Comments -->
+
+            </div>
+            <!-- End Content -->
+            <!-- Sidebar -->
+            <div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
+                <!-- Widget -->
+                <div class="widget" ng-controller="AccountController as accountCtrl" ng-if="accountCtrl.isLogged()">
+
+                    <h5 class="widget-title font-alt" title="Selecione se esta vaga é relevante ou não pra você!">Gostou da vaga? <i class="fa fa-question-circle"></i></h5>
+
+                    <div class="widget-body">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 align-center font-alt ">
+                                <span class="icon-sad icon-avaliacao col-md-12  btn btn-mod btn-red btn-circle" ng-click="vagaCtrl.AvaliaVaga(false)"></span>
+                                <h5 ng-class="{'font-weigth-700': vagaCtrl.vaga.Like == false}">Não Gostei</h5>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 align-center font-alt">
+                                <span class="icon-happy icon-avaliacao col-md-12 btn btn-mod btn-green btn-circle" ng-click="vagaCtrl.AvaliaVaga(true)"></span>
+                                <h5 ng-class="{'font-weigth-700': vagaCtrl.vaga.Like == true}">Gostei</h5>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- End Widget -->
+                </div>
+                <rhythm-sidebar></rhythm-sidebar>
+            </div>
+
+            <!-- End Sidebar -->
+        </div>
+
+    </div>
+</section>
+<!-- End Section -->

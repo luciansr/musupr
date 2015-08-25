@@ -1,0 +1,174 @@
+﻿<!-- Section -->
+<section class="page-section bg-dark-alfa-30" ng-style="{'background-image':'url(../../../Content/Images/slider-bg1.jpg)'}">
+    <div class="relative container align-left">
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Meus Anúncios</h1>
+                <div class="hs-line-4 font-alt">
+                    Gerencie seus anúncios
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-30">
+                <div class="mod-breadcrumbs font-alt align-right">
+                    <a href="#!/">Início</a>
+                    &nbsp;/&nbsp;<a href="javascript:void(0)">Meus anúncios</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- End Section -->
+<!-- INICIO EDIT VAGAS -->
+<section class="page-section pt-60 pb-60">
+    <div class="container relative">
+
+        <h3 class="font-alt mb-70 mb-sm-40 section-title">
+            Meus anúncios
+        </h3>
+
+        <h4 class="font-alt mb-70 mb-sm-40 text-center" ng-if="!meusAnunciosCtrl.loading && meusAnunciosCtrl.items.vagas.length == 0">
+           Sem anúncios: <a ng-href="#!/NovaVaga">Crie seu primeiro anúncio</a>
+        </h4>
+
+        <!-- Row -->
+        <div class="row">
+
+            <!-- Col -->
+
+            <div class="col-sm-12 mb-40 font-alt">
+                <div class="page-relative-loader" ng-if="meusAnunciosCtrl.loading">
+                    <div class="loader">Carregando...</div>
+                </div>
+                <!-- Form -->
+                <form class="form" novalidate ng-if="!meusAnunciosCtrl.items.vagas.length == 0">
+                    <table st-table="rowCollection" st-safe-src="meusAnunciosCtrl.items.vagas" class=" table table-striped">
+                        <thead>
+                            <tr>
+                                <th st-sort="ID" class="text-center" ng-if="meusAnunciosCtrl.isAdmin">ID/Criador</th>
+                                <th class="text-center">Visualizar</th>
+                                <th st-sort="Titulo">Título</th>
+                                <th st-sort="DataCriacao">Data Criação</th>
+                                <th st-sort="DataExpiracao">Data Expiração</th>
+                                <th class="text-center">Editar</th>
+                                <th class="text-center" ng-if="!meusAnunciosCtrl.isAdmin">Expirar anúncio</th>
+                                <th st-sort="ID" class="text-center" ng-if="meusAnunciosCtrl.isAdmin">Bloqueado</th>
+                                <th class="text-center" ng-if="meusAnunciosCtrl.isAdmin">Bloquear</th>
+                            </tr>
+                            <tr ng-if="meusAnunciosCtrl.isAdmin">
+                                <th colspan="8"><input st-search="" class="form-control" placeholder="Busca" type="text" /></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="row in rowCollection" ng-class="{'bg-row-admin': row.DeAdmin}">
+                                <td ng-if="meusAnunciosCtrl.isAdmin" class="text-center">{{row.ID + ' / ' + row.CriadorID}}</td>
+                                <td class="text-center"><a ng-href="#!/Vaga/{{row.ID}}"><i class="fa fa-external-link"></i></a></td>
+                                <td>{{row.Titulo}}</td>
+                                <td>{{row.DataCriacao | date:'dd/MM/yyyy HH:mm'}}</td>
+                                <td>{{row.DataExpiracao | date:'dd/MM/yyyy HH:mm'}}</td>
+                                <td class="text-center"><a ng-href="#!/EditarVaga/{{row.ID}}"><i class="fa fa-pencil-square-o"></i></a></td>
+                                <td class="text-center" ng-if="!meusAnunciosCtrl.isAdmin">
+                                    <i class="fa fa-times cursor-pointer color-red" ng-click="meusAnunciosCtrl.ExpirarAnuncio(row.ID)"></i>
+                                </td>
+                                <td class="text-center" ng-if="meusAnunciosCtrl.isAdmin">
+                                    {{row.Bloqueada? 'Sim': 'Não'}}
+                                </td>
+                                <td class="text-center" ng-if="meusAnunciosCtrl.isAdmin">
+                                    <i class="fa fa-check cursor-pointer color-green" ng-click="meusAnunciosCtrl.BloquearAnuncio(row.ID)" title="Bloquear"></i>&nbsp;
+                                    <i class="fa fa-times cursor-pointer color-red" ng-click="meusAnunciosCtrl.DesbloquearAnuncio(row.ID)" title="Desbloquear"></i>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="{{meusAnunciosCtrl.isAdmin? 8: 6}}" class="text-center">
+                                    <div st-pagination="" st-items-by-page="10" st-displayed-pages="7" class="pagination-white"></div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </form>
+                <!-- End Form -->
+            </div>
+
+
+            <!-- End Col -->
+
+
+        </div>
+        <!-- End Row -->
+
+    </div>
+
+</section>
+
+<hr class="mt-0 mb-0">
+<!-- END EDIT VAGAS -->
+<!-- INICIO EDIT USUARIOS -->
+<section class="page-section pt-60 pb-60" ng-if="meusAnunciosCtrl.items.usuarios">
+    <div class="container relative">
+
+        <h3 class="font-alt mb-70 mb-sm-40 section-title">
+            Usuários
+        </h3>
+
+        <!-- Row -->
+        <div class="row">
+
+            <!-- Col -->
+
+            <div class="col-sm-12 mb-40 font-alt">
+                <!-- Form -->
+                <form class="form" novalidate>
+                    <table st-safe-src="meusAnunciosCtrl.items.usuarios" st-table="rowCollection" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th st-sort="ID" class="text-center">ID</th>
+                                <th st-sort="Nome">Nome</th>
+                                <th st-sort="Email">E-Mail</th>
+                                <th st-sort="DataCriacao">Data Criação</th>
+                                <th st-sort="EmailVerificado" class="text-center">Verificado</th>
+                                <th st-sort="Bloqueado" class="text-center">Bloqueado</th>
+                                <th class="text-center">Bloquear</th>
+                            </tr>
+                            <tr>
+                                <th colspan="7"><input st-search="" class="form-control" placeholder="Busca" type="text" /></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="row in rowCollection" ng-class="{'bg-row-admin': row.EhAdmin}">
+                                <td class="text-center">{{row.ID}}</td>
+                                <td>{{row.Nome}}</td>
+                                <td>{{row.Email}}</td>
+                                <td>{{row.DataCriacao | date:'dd/MM/yyyy HH:mm'}}</td>
+                                <td class="text-center">{{row.EmailVerificado? 'Sim': 'Não'}}</td>
+                                <td class="text-center">{{row.Bloqueado? 'Sim': 'Não'}}</td>
+                                <td class="text-center" ng-if="meusAnunciosCtrl.isAdmin">
+                                    <i class="fa fa-check cursor-pointer color-green" ng-click="meusAnunciosCtrl.BloquearUsuario(row.ID)" title="Bloquear"></i>&nbsp;
+                                    <i class="fa fa-times cursor-pointer color-red" ng-click="meusAnunciosCtrl.DesbloquearUsuario(row.ID)" title="Desbloquear"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7" class="text-center">
+                                    <div st-pagination="" st-items-by-page="10" st-displayed-pages="7"></div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </form>
+                <!-- End Form -->
+            </div>
+            <!-- End Col -->
+        </div>
+        <!-- End Row -->
+    </div>
+</section>
+<hr class="mt-0 mb-0" ng-if="meusAnunciosCtrl.items.usuarios">
+<!-- END EDIT USUARIOS -->
